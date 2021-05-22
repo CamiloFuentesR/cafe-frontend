@@ -1,17 +1,23 @@
-// .nav-item, .nav-link{
-//     border-radius: 10px;
-//     padding: 10px 20px !important;
-//     &:focus{
-//         color: rgba(182, 29, 29, 0.932) !important;
-//     }
-//     &:hover{
-//         color: rgba(182, 29, 29, 0.932) !important;
-//         background-color: blanchedalmond ;
+.nav-item, .nav-link{
+    border-radius: 10px;
+    padding: 10px 20px !important;
+  
+  
+    &:visited{
+        color: rgb(151, 219, 25) !important;
 
-//     }
-// }
+    }
+    &:hover{
+        background-color: rgba(90, 86, 81, 0.884) ;
+
+    }
+}
 ._nav_r{
     display: flex;
     flex-direction: row;
 }
-
+._nav{
+    &:hover{
+        // background-color: blanchedalmond ;
+    }
+}

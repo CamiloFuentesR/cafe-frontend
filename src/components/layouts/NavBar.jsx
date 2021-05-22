@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom'
 
 export const NavBar = () => {
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between ">
-            <div className="navbar-nav ">
+        <nav className="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between  ">
+            <div className="navbar-nav  ">
 
                 <div className="">
                     <NavLink
@@ -15,7 +15,8 @@ export const NavBar = () => {
                     >Home</NavLink>
 
                 </div>
-                <div className="_nav_r">
+                </div>
+                <div className="_nav_r navbar-nav">
                     <div className="">
                         <NavLink
                              activeClassName="active"
@@ -31,7 +32,6 @@ export const NavBar = () => {
                         >Register</NavLink>
 
                     </div>
-                </div>
             </div>
         </nav>
     )
