@@ -11,7 +11,7 @@ import { NavBar } from "../components/layouts/NavBar";
 import {AuthorizedRouter} from "./Authorized.routes";
  
 export const AppRouter = () => {
-    const [logged, setlogged] = useState(false)
+    const [logged] = useState(false)
 
     return (
         <Router>

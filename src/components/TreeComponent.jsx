@@ -2,7 +2,7 @@ import React from 'react'
 import Tree from 'react-animated-tree'
 
 export const TreeComponent = () => {
-     const config = open => ({
+    const config = open => ({
         from: { height: 0, opacity: 0, transform: 'translate3d(20px,0,0)' },
         to: {
             height: open ? 'auto' : 0,
