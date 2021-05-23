@@ -1,0 +1,338 @@
+
+
+@media (max-width: 450px) {
+    .__login{
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        height: 90%;
+        position: absolute;
+    }    
+    ._login_card{
+        width: 95%;
+        height: 95%;
+        border: 1px solid;
+        border-radius: 10px;
+        h1{
+            text-align: center;
+        }
+    }
+    ._login_title{
+        align-items: center;
+        color: aliceblue;
+        display: flex;
+        position: relative;
+        background: url('../img/coffe.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 3px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+        height: 45%;
+        h1{
+            font-family: 'Roboto', sans-serif;
+            font-weight: bolder 700;
+            font-size: 60px;
+            -webkit-text-stroke: .4px black
+        }
+    }
+    ._login_form{
+        height: 55%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px 50px ;
+        font-size: 15px;
+    }
+    ._Login_email{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    ._login_password{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    ._login_label{
+        width: 100%;
+        border: 0px;
+        border-bottom: 1px solid;
+        opacity: .8;
+        &:focus{
+            outline: none;
+            border-bottom: 1px solid rgb(114, 68, 9);
+        }
+    }
+    ._login_button{
+        margin-top: 20px;
+        button {
+            padding: 10px;
+            color: aliceblue;
+            background-color: darkgoldenrod;
+        }
+    }
+    ._login_register{
+        a{
+            text-decoration: none;
+            color: black;
+            &:hover{
+                border-bottom: 1px solid;
+            }
+        }
+    }
+}
+@media (min-width: 450px) {
+    .__login{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 90%;
+        position: absolute;
+        width: 100%;
+    }    
+    ._login_card{
+        width: 70%;
+        height: 80%;
+        border: 1px solid;
+        border-radius: 10px;
+        h1{
+            text-align: center;
+        }
+    }
+    ._login_title{
+        align-items: center;
+        color: aliceblue;
+        display: flex;
+        position: relative;
+        background: url('../img/coffe.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 3px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+        height: 45%;
+        h1{
+            font-family: 'Roboto', sans-serif;
+            font-weight: bolder 700;
+            font-size: 60px;
+            -webkit-text-stroke: .4px black
+        }
+    }
+    ._login_form{
+        height: 55%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px 50px ;
+    }
+    ._Login_email{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    ._login_password{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    ._login_label{
+        width: 100%;
+        border: 0px;
+        border-bottom: 1px solid;
+        opacity: .8;
+        &:focus{
+            outline: none;
+            border-bottom: 1px solid rgb(114, 68, 9);
+        }
+    }
+    ._login_button{
+        margin-top: 20px;
+        button {
+            padding: 10px;
+            color: aliceblue;
+            background-color: darkgoldenrod;
+        }
+    }
+    ._login_register{
+        a{
+            text-decoration: none;
+            color: black;
+            &:hover{
+                border-bottom: 1px solid;
+            }
+        }
+    }
+}
+@media ( min-width: 800px ) and (max-width: 1099px) {
+    .__login{
+
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        height: 90%;
+        position: absolute;
+    }    
+    ._login_card{
+        width: 50%;
+        margin-top: 30px;
+        border: 1px solid;
+        border-radius: 10px;
+        h1{
+            text-align: center;
+        }
+
+    }
+    ._login_title{
+        align-items: center;
+        color: aliceblue;
+        display: flex;
+        position: relative;
+        background: url('../img/coffe.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 3px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: 45%;
+        width: 100%;
+        h1{
+            font-family: 'Roboto', sans-serif;
+            font-weight: bolder 700;
+            font-size: 60px;
+            -webkit-text-stroke: .4px black
+        }
+    }
+    ._login_form{
+        padding: 10px 50px ;
+    }
+    ._Login_email{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    ._login_password{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    ._login_label{
+        width: 100%;
+        border: 0px;
+        border-bottom: 1px solid;
+        opacity: .8;
+        &:focus{
+            outline: none;
+            border-bottom: 1px solid rgb(114, 68, 9);
+
+        }
+
+    }
+    ._login_button{
+        margin-top: 20px;
+        button {
+            padding: 10px;
+            color: aliceblue;
+            background-color: darkgoldenrod;
+        }
+    }
+    ._login_register{
+        a{
+            text-decoration: none;
+            color: black;
+            &:hover{
+                border-bottom: 1px solid;
+            }
+        }
+    }
+}
+@media (min-width: 1100px) {
+    .__login{
+
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        height: 90%;
+        position: absolute;
+    }    
+    ._login_card{
+        width: 40%;
+        margin-top: 30px;
+        border: 1px solid;
+        border-radius: 10px;
+        h1{
+            text-align: center;
+        }
+
+    }
+    ._login_title{
+        color: aliceblue;
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 45%;
+        background:linear-gradient(
+            rgba(22, 20, 19, 0.397),
+            rgba(24, 22, 22, 0.363),
+          ) , url('../img/coffe.jpg');
+        border-radius: 3px;
+        
+        background-repeat: no-repeat;
+        background-size: cover ;
+        background-position: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        h1{
+        font-family: 'Roboto', sans-serif;
+        font-weight: bolder 700;
+        font-size: 60px;
+        -webkit-text-stroke: .4px black
+    }
+    }
+    ._login_form{
+        padding: 35px;
+    }
+    ._Login_email{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    ._login_password{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    ._login_label{
+        width: 100%;
+        border: 0px;
+        border-bottom: 1px solid;
+        opacity: .8;
+        &:focus{
+            outline: none;
+            border-bottom: 1px solid rgb(114, 68, 9);
+
+        }
+
+    }
+    ._login_button{
+        margin-top: 20px;
+        button {
+            padding: 10px;
+            color: aliceblue;
+            background-color: darkgoldenrod;
+        }
+    }
+    ._login_register{
+        a{
+            text-decoration: none;
+            color: black;
+            &:hover{
+                border-bottom: 1px solid;
+            }
+        }
+    }
+}
