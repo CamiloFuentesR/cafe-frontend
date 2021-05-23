@@ -9,10 +9,12 @@ import { DashboardRouter } from "./Dashboard.routes";
 
 import { NavBar } from "../components/layouts/NavBar";
 import { AuthorizedRouter } from "./Authorized.routes";
+import { useSelector } from "react-redux";
 
 export const AppRouter = () => {
     const [logged] = useState(false)
-
+    const {isLogged} = useSelector(state => state.root)
+    console.log(isLogged)
     return (
         <Router>
             <>
