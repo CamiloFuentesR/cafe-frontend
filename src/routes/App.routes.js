@@ -8,8 +8,8 @@ import { PublicRouter } from "./Public.routes";
 import { DashboardRouter } from "./Dashboard.routes";
 
 import { NavBar } from "../components/layouts/NavBar";
-import {AuthorizedRouter} from "./Authorized.routes";
- 
+import { AuthorizedRouter } from "./Authorized.routes";
+
 export const AppRouter = () => {
     const [logged] = useState(false)
 
@@ -17,21 +17,23 @@ export const AppRouter = () => {
         <Router>
             <>
                 <NavBar />
+                <div>
+                    <Switch>
+                        <PrivateRouter
 
-                <Switch>
-                    <PrivateRouter
-                        
-                        path="/logged"
-                        component={AuthorizedRouter}
-                        isAuthenticated={logged}
-                    />
-                    <PublicRouter
-                        path="/"
-                        component={DashboardRouter}
-                        isAuthenticated={logged}
+                            path="/logged"
+                            component={AuthorizedRouter}
+                            isAuthenticated={logged}
+                        />
+                        <PublicRouter
+                            path="/"
+                            component={DashboardRouter}
+                            isAuthenticated={logged}
 
-                    />
-                </Switch>
+                        />
+                    </Switch>
+
+                </div>
             </>
         </Router>
 
