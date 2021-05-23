@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 export const NavBar = () => {
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between  ">
+        <nav className="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between sticky-top ">
             <div className="navbar-nav  ">
 
                 <div className="">
