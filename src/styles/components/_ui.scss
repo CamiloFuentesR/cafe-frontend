@@ -3,7 +3,14 @@
     justify-content: center;
     height: 100vh;
     width: 100%;
+    // margin-top: -15px;
     z-index: 1000 !important;
     // background-color: rgba(0, 0, 0, 0.158)  !important;
     backdrop-filter: blur(2px)  contrast(.8) ;
+}
+.cargandoNav{
+    z-index: 10 ;
+    margin-top: -15px;
+
+    backdrop-filter: /* blur(2px) */  contrast(.8) ;
 }

@@ -1,16 +1,18 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { startLogout } from '../../actions/auth.action'
 
 export const NavBar = () => {
+
+    const {isLoading} = useSelector(state => state.ui)
 const dispatch = useDispatch()
     const handleLogout = () => {
         dispatch(startLogout())
     }
 
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark  justify-content-between sticky-top ">
+        <nav className={`navbar navbar-expand-sm navbar-dark  justify-content-between sticky-top ${isLoading && 'cargandoNav'} `}>
             <div className="navbar-nav  ">
 
                 <div className="">
