@@ -1,17 +1,12 @@
 .cargando{
     display: flex;
     justify-content: center;
-    height: 100%;
+    height: 110vh;
     width: 100%;
     z-index: 999 !important;
     // background-color: rgba(0, 0, 0, 0.158)  !important;
     backdrop-filter: blur(2px)  contrast(.8) ;
 }
 .cargandoNav{
-    height: 100%;
-    z-index: 1000 !important;
-
-    background-color: rgb(245, 236, 236)  !important;
-
-    backdrop-filter: blur(2px)  contrast(.8) !important;
+    display: none;
 }

@@ -12,7 +12,7 @@ const dispatch = useDispatch()
     }
 console.log(isLoading);
     return (
-        <nav className={`navbar navbar-expand-sm navbar-dark  justify-content-between sticky-top `}>
+        <nav className={`navbar navbar-expand-sm navbar-dark  justify-content-between sticky-top ${isLoading && 'cargandoNav'} `}>
             <div className="navbar-nav  ">
 
                 <div className="">

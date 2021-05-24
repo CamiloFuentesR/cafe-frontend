@@ -18,8 +18,7 @@ export const AppRouter = () => {
     // useEffect(() => {
 
     // }, [dispatch])
-    // isLoading &&
-    // <Load/>
+  
     return (
         <Router>
             <>
