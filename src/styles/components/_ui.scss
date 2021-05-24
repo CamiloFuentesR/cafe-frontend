@@ -1,0 +1,8 @@
+.cargando{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    z-index: 1000 !important;
+    // background-color: rgba(0, 0, 0, 0.158)  !important;
+    backdrop-filter: blur(1px)  contrast(.5) ;
+}

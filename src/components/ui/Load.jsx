@@ -1,6 +1,6 @@
 import Lottie from 'lottie-react'
 import React, { useRef } from 'react'
-import ufos from "../../json/ufos.json";
+import tacos from "../../json/walking-taco.json";
 
 export const Load = () => {
 
@@ -9,10 +9,10 @@ export const Load = () => {
         <div className="cargando">
              <Lottie 
                 lottieRef={lottieRef}
-                animationData={ufos}
+                animationData={tacos}
                 loop={true}
                 autoPlay={true}
-                style={{width: '100%' }}
+                style={{width: '35%' }}
                 className="cargando"
                 />
         </div>
