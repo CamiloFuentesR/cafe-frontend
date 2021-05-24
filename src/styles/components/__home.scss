@@ -14,3 +14,8 @@
 table{
     height: 30px;
 }
+.cargando{
+    z-index: 1000 !important;
+    background-color: black .2 !important;
+    backdrop-filter: blur(1px) contrast(.1);
+}

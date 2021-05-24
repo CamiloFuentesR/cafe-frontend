@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,9 +12,14 @@ import { AuthorizedRouter } from "./Authorized.routes";
 import { useSelector } from "react-redux";
 
 export const AppRouter = () => {
-    const [logged] = useState(false)
     const {isLogged} = useSelector(state => state.root)
-    console.log(isLogged)
+    // const dispatch = useDispatch();
+
+    // useEffect(() => {
+
+    // }, [dispatch])
+    // isLoading &&
+    // <Load/>
     return (
         <Router>
             <>
@@ -25,12 +30,12 @@ export const AppRouter = () => {
 
                             path="/logged"
                             component={AuthorizedRouter}
-                            isAuthenticated={logged}
+                            isAuthenticated={isLogged}
                         />
                         <PublicRouter
                             path="/"
                             component={DashboardRouter}
-                            isAuthenticated={logged}
+                            isAuthenticated={isLogged}
 
                         />
                     </Switch>

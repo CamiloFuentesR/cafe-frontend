@@ -19,6 +19,18 @@
             text-align: center;
         }
     }
+    ._register_card{
+        width: 95%;
+        margin-top: 30px;
+        border: 1px solid;
+        border-radius: 10px;
+        h1{
+            text-align: center;
+        }
+        p{
+            height:0px;
+        }
+    }
     ._login_title{
         align-items: center;
         color: aliceblue;
@@ -48,15 +60,12 @@
         padding: 10px 50px ;
         font-size: 15px;
     }
-    ._Login_email{
-        margin-bottom: 20px;
+    ._Login_div{
+        margin-top: 20px;
         width: 100%;
     }
-    ._login_password{
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    ._login_label{
+  
+    ._login_input{
         width: 100%;
         border: 0px;
         border-bottom: 1px solid;
@@ -83,6 +92,12 @@
             }
         }
     }
+    .form-control{
+        &:focus{
+            box-shadow: none;
+            outline: none;
+        }
+    }
 }
 @media (min-width: 450px) {
     .__login{
@@ -101,6 +116,18 @@
         border-radius: 10px;
         h1{
             text-align: center;
+        }
+    }
+    ._register_card{
+        width: 70%;
+        margin-top: 30px;
+        border: 1px solid;
+        border-radius: 10px;
+        h1{
+            text-align: center;
+        }
+        p{
+            height:0px;
         }
     }
     ._login_title{
@@ -131,15 +158,12 @@
         justify-content: center;
         padding: 10px 50px ;
     }
-    ._Login_email{
-        margin-bottom: 20px;
+    ._Login_div{
+        margin-top: 20px;
         width: 100%;
     }
-    ._login_password{
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    ._login_label{
+   
+    ._login_input{
         width: 100%;
         border: 0px;
         border-bottom: 1px solid;
@@ -166,6 +190,11 @@
             }
         }
     }
+    .form-control{
+        &:focus{
+            box-shadow: none;
+        }
+    }
 }
 @media ( min-width: 800px ) and (max-width: 1099px) {
     .__login{
@@ -187,6 +216,18 @@
             text-align: center;
         }
 
+    }
+    ._register_card{
+        width: 50%;
+        margin-top: 30px;
+        border: 1px solid;
+        border-radius: 10px;
+        h1{
+            text-align: center;
+        }
+        p{
+            height:0px;
+        }
     }
     ._login_title{
         align-items: center;
@@ -212,15 +253,12 @@
     ._login_form{
         padding: 10px 50px ;
     }
-    ._Login_email{
-        margin-bottom: 20px;
+    ._Login_div{
+        margin-top: 20px;
         width: 100%;
     }
-    ._login_password{
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    ._login_label{
+  
+    ._login_input{
         width: 100%;
         border: 0px;
         border-bottom: 1px solid;
@@ -249,6 +287,11 @@
             }
         }
     }
+    .form-control{
+        &:focus{
+            box-shadow: none;
+        }
+    }
 }
 @media (min-width: 1100px) {
     .__login{
@@ -269,7 +312,22 @@
         h1{
             text-align: center;
         }
-
+        p{
+            height:0px;
+        }
+    }
+    ._register_card{
+        width: 40%;
+        height: 92vh;
+        margin-top: 30px;
+        border: 1px solid;
+        border-radius: 10px;
+        h1{
+            text-align: center;
+        }
+        p{
+            height:0px;
+        }
     }
     ._login_title{
         color: aliceblue;
@@ -298,16 +356,14 @@
     }
     ._login_form{
         padding: 35px;
+        position: relative;
     }
-    ._Login_email{
-        margin-bottom: 20px;
+    ._Login_div{
+        margin-top: 0px;
         width: 100%;
     }
-    ._login_password{
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    ._login_label{
+ 
+    ._login_input{
         width: 100%;
         border: 0px;
         border-bottom: 1px solid;
@@ -315,7 +371,6 @@
         &:focus{
             outline: none;
             border-bottom: 1px solid rgb(114, 68, 9);
-
         }
 
     }
@@ -335,5 +390,16 @@
                 border-bottom: 1px solid;
             }
         }
+    }
+    .form-control{
+        &:focus{
+            box-shadow: none;
+        }
+    }
+    .cargando{
+        width: 100%;
+        z-index: 1000 !important;
+        background-color: black .1 !important;
+        backdrop-filter: blur(5px) contrast(.1) opacity(.4);
     }
 }

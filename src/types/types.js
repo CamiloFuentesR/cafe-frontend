@@ -4,8 +4,8 @@ export const types = {
     startRegister : '[auth] Register',
     startLogOut : '[auth] Logout cerrar sesión',
     
-    startLoading : '[ui] Loading',
-    finishLoading : '[ui] Stop Loading',
+    startLoading : '[ui] Start Loading',
+    endLoading : '[ui] End Loading',
 
     startLogin : '[auth] Login',
 }

@@ -13,3 +13,4 @@ export const authMessage = (data) => {
         return Swal.fire('Campos',password.msg,'warning')
     }
 }
+
