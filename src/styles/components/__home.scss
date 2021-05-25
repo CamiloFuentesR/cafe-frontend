@@ -1,7 +1,7 @@
 .__home_screen {
     display: flex;
     flex-direction: column;
-    height: 200vh;
+    height: 300vh;
     width: 100%;
     background-color: aquamarine;
 }
@@ -12,7 +12,41 @@
 .__home_header{
     width: 100%;
     height: 100vh;
-    background-color: brown;
+    background: linear-gradient(
+        rgba(145, 49, 49, 0.137),
+        rgba(163, 92, 92, 0.103),
+    ),url('../img/bar.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.__home_section1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+    background-color: cadetblue;
+   
+}
+._home_section1_sub{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img{
+        width: 30%;
+        height: 60%;
+        margin-top: -80px;
+    }
+    h2{
+        margin-top: -250px;
+        z-index: 100;
+        opacity: .5;
+    }
+}
+.__home_menu{
+    width: 100%;
+    height: 120vh;
+    background-color: rgba(222, 228, 223, 0.945);
 }
 table{
     height: 30px;
