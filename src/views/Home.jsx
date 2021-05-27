@@ -32,8 +32,8 @@ export const Home = () => {
                             </header>
                         {
                                 menu.map(data => (data.category.name ==='REFRESCOS') && (
-                                    <div className="d-flex justify-content-between m-5" key={data.name}>
-                                       <p>{data.name}</p><hr/><p>{data.price}</p>
+                                    <div className="d-flex justify-content-between m-2" key={data.name}>
+                                       <p>{data.name}</p><hr/><p>${data.price}</p>
                                     </div>
                                 ))
                             }
@@ -45,7 +45,7 @@ export const Home = () => {
                         {
                                 menu.map(data => (data.category.name ==='BEBIDAS CALIENTES') && (
                                     <div className="d-flex justify-content-between m-2" key={data.name}>
-                                        <p>{data.name}</p><hr/><p>{data.price}</p>
+                                        <p>{data.name}</p><hr/><p>${data.price}</p>
                                     </div>
                                 ))
                             }
@@ -59,7 +59,7 @@ export const Home = () => {
                             {
                                 menu.map(data => (data.category.name ==='POSTRES') && (
                                     <div className="d-flex justify-content-between m-2" key={data.name}>
-                                        <p>{data.name}</p><hr/><p>{data.price}</p>
+                                        <p>{data.name}</p><hr/><p>${data.price}</p>
                                     </div>
                                 ))
                             }
@@ -71,7 +71,7 @@ export const Home = () => {
                         {
                                 menu.map(data => (data.category.name ==='DESAYUNOS') && (
                                     <div className="d-flex justify-content-between m-5" key={data.name}>
-                                       <p>{data.name}</p><hr/><p>{data.price}</p>
+                                       <p>{data.name}</p><hr/><p>${data.price}</p>
                                     </div>
                                 ))
                             }
