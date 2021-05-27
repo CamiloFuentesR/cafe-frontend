@@ -7,9 +7,9 @@
             rgba(145, 49, 49, 0.137),
             rgba(163, 92, 92, 0.103),
         ),url('../img/bar.jpg');
-        background-attachment: fixed;
+        background-attachment: scroll;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: auto;
     }
     
     .treeview{
@@ -20,7 +20,7 @@
         height: 100vh;
     }
     .__home_section1{
-        background-color: azure;
+        background-color: rgb(255, 255, 255);
         display: flex;
         justify-content: center;
         height: 30vh;
