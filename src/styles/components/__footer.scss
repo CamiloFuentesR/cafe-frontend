@@ -1,0 +1,133 @@
+@media (max-width: 400px){
+    .__footer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.822);
+    }
+    
+    
+    .__footer_contactanos{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .__footer_ig{
+        padding: 5px;
+        display: flex;
+        p{
+            padding: 5px;
+            color: rgb(255, 255, 255);
+        }
+    }
+    
+    .__footer_ws{
+        padding: 5px;
+        display: flex;
+        p{
+            padding: 5px;
+            color: rgb(255, 255, 255);
+        }
+    }
+    
+    .__footer_fb{
+        padding: 5px;
+        display: flex;
+        p{
+            padding: 5px;
+            color: rgb(255, 255, 255);
+        }
+    }
+    .__footer_horarios{
+        width: 100%;
+        color: rgb(255, 255, 255);
+    }
+    .__footer_horarios{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .__footer_semana{
+        width: 60%;
+        margin: 2px;
+        
+    }
+    
+    .__footer_finde{
+        width: 40%;
+    }
+    .__footer_hr{
+        width: 100%;
+        color: aliceblue !important;
+    }
+}
+
+@media(min-width: 401px){
+    .__footer{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.822);
+    }
+    
+    
+    .__footer_contactanos{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding: 20px;
+        margin-left: 100px;
+        border-right: 1px solid grey;
+        margin-right: 30px;
+    }
+    
+    .__footer_ig{
+        padding: 5px;
+        display: flex;
+        p{
+            padding: 5px;
+            color: rgb(255, 255, 255);
+        }
+    }
+    
+    .__footer_ws{
+        padding: 5px;
+        display: flex;
+        p{
+            padding: 5px;
+            color: rgb(255, 255, 255);
+        }
+    }
+    
+    .__footer_fb{
+        padding: 5px;
+        display: flex;
+        p{
+            padding: 5px;
+            color: rgb(255, 255, 255);
+        }
+    }
+    .__footer_horarios{
+        width: 50%;
+        color: rgb(255, 255, 255);
+    }
+    .__footer_horarios{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .__footer_semana{
+        width: 60%;
+        margin: 2px;
+        
+    }
+    
+    .__footer_finde{
+        width: 40%;
+    }
+}
+

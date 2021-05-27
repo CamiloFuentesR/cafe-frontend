@@ -1,27 +1,61 @@
-.navbar{
-    position: sticky ;
-    top: 0;
-    background-color: rgb(255, 255, 255);
-   
-}
-.nav-item, .nav-link{
-    border-radius: 10px;
-    padding: 10px 20px !important;
-    color:  lighten($color: rgb(255, 51, 0), $amount: 25) !important;
-  
-  
-    &:hover{
-        // background-color: rgba(199, 196, 193, 0.212) ;
-        color: rgb(233, 107, 4) !important;
-    }
- 
-}
-.nav-link.active{
-        background-color: rgba(199, 196, 193, 0.212) ;
-        color: rgb(233, 107, 4) !important;
-    }
 
-._nav_r{
-    display: flex;
-    flex-direction: row;
+@media(max-width: 400px){
+    .navbar{
+        position: sticky ;
+        top: 0;
+        background-color: rgb(255, 255, 255);
+       
+    }
+    .nav-item, .nav-link{
+        border-radius: 10px;
+        padding: 10px 20px !important;
+        color:  lighten($color: rgb(233, 107, 4), $amount: 35) !important;
+      
+      
+        &:hover{
+            // background-color: rgba(199, 196, 193, 0.212) ;
+            color: rgb(233, 107, 4) !important;
+        }
+     
+    }
+    .nav-link.active{
+            background-color: rgba(199, 196, 193, 0.212) ;
+            color: rgb(233, 107, 4) !important;
+        }
+    
+    ._nav_r{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media(min-width: 400px){
+
+    .navbar{
+        position: sticky ;
+        top: 0;
+        background-color: rgb(255, 255, 255);
+       
+    }
+    .nav-item, .nav-link{
+        border-radius: 10px;
+        padding: 10px 20px !important;
+        color:  lighten($color: rgb(255, 51, 0), $amount: 25) !important;
+      
+      
+        &:hover{
+            // background-color: rgba(199, 196, 193, 0.212) ;
+            color: rgb(233, 107, 4) !important;
+        }
+     
+    }
+    .nav-link.active{
+            background-color: rgba(199, 196, 193, 0.212) ;
+            color: rgb(233, 107, 4) !important;
+        }
+    
+    ._nav_r{
+        display: flex;
+        flex-direction: row;
+    }
 }
