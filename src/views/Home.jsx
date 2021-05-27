@@ -27,19 +27,25 @@ export const Home = () => {
                 <div className="__home_menu_contenido">
                     <div className="__home_liquidos">
                         <div className="__home_refrescos">
+                            <header>
+                                <h4 className="text-center">Refrecos</h4>
+                            </header>
                         {
                                 menu.map(data => (data.category.name ==='REFRESCOS') && (
                                     <div className="d-flex justify-content-between m-5" key={data.name}>
-                                        <p>{data.name}</p>----------------------------------------------------<p>{data.price}</p>
+                                       <p>{data.name}</p><hr/><p>{data.price}</p>
                                     </div>
                                 ))
                             }
                         </div>
                         <div className="__home_bebidas_calientes">
+                        <header>
+                                <h4 className="text-center">Bebidas Calientes</h4>
+                            </header>
                         {
                                 menu.map(data => (data.category.name ==='BEBIDAS CALIENTES') && (
                                     <div className="d-flex justify-content-between m-2" key={data.name}>
-                                        <p>{data.name}</p>----------------------------------------------------<p>{data.price}</p>
+                                        <p>{data.name}</p><hr/><p>{data.price}</p>
                                     </div>
                                 ))
                             }
@@ -47,19 +53,25 @@ export const Home = () => {
                     </div>
                     <div className="__home_para_comer">
                         <div className="__home_postres">
+                        <header>
+                                <h4 className="text-center">Postres</h4>
+                            </header>
                             {
                                 menu.map(data => (data.category.name ==='POSTRES') && (
-                                    <div className="d-flex justify-content-between m-5" key={data.name}>
-                                        <p>{data.name}</p>-----------------------------------------<p>{data.price}</p>
+                                    <div className="d-flex justify-content-between m-2" key={data.name}>
+                                        <p>{data.name}</p><hr/><p>{data.price}</p>
                                     </div>
                                 ))
                             }
                         </div>
                         <div className="__home_desayunos">
+                        <header>
+                                <h4 className="text-center">Desayunos</h4>
+                            </header>
                         {
                                 menu.map(data => (data.category.name ==='DESAYUNOS') && (
                                     <div className="d-flex justify-content-between m-5" key={data.name}>
-                                        <p>{data.name}</p>----------------------------------------------------<p>{data.price}</p>
+                                       <p>{data.name}</p><hr/><p>{data.price}</p>
                                     </div>
                                 ))
                             }
