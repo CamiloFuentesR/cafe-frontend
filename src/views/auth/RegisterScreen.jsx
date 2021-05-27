@@ -90,7 +90,7 @@ export const RegisterScreen = () => {
                     <div className="_login_button">
                         <button>Ingresar</button>
                     </div>
-                    <div className="_login_register">
+                    <div className="_login_register text-center mt-2">
                         <p>¿Ya estas registrado? <Link to="/auth/login">Iniciar Sesión</Link></p>
                     </div>
                 </form>

@@ -5,12 +5,16 @@ export const clienteAxios = axios.create({
     baseURL : process.env.REACT_APP_API_URL,
     
 })
+export const token = () => {
+    
+    return localStorage.getItem('token') ||'';
+}
 
 export const clienteAxiosToken = axios.create({
     baseURL : process.env.REACT_APP_API_URL,
     headers: {
         'Content-type': 'application/json',
-        'x-token': localStorage.getItem('token'),
-    },
+        'x-token': token(),
+    }
     
 })

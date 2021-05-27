@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import heartcoffe from "../styles/img/heartcoffe.jpg"
 import { Footer } from '../components/layouts/Footer';
+import { useDispatch, useSelector } from 'react-redux';
+import { startGetbyCategory } from '../actions/menu.action';
 export const Home = () => {
+
+    const { menu } = useSelector(state => state.menu)
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(startGetbyCategory('galletas'))
+    }, [dispatch])
+
     return (
         <div className='__home_screen'>
             <header className="__home_header">
@@ -14,7 +24,49 @@ export const Home = () => {
                 </div>
             </section>
             <section className="__home_menu">
-                <h2>section2</h2>
+                <div className="__home_menu_contenido">
+                    <div className="__home_liquidos">
+                        <div className="__home_refrescos">
+                        {
+                                menu.map(data => (data.category.name ==='REFRESCOS') && (
+                                    <div className="d-flex justify-content-between m-5" key={data.name}>
+                                        <p>{data.name}</p>----------------------------------------------------<p>{data.price}</p>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                        <div className="__home_bebidas_calientes">
+                        {
+                                menu.map(data => (data.category.name ==='BEBIDAS CALIENTES') && (
+                                    <div className="d-flex justify-content-between m-2" key={data.name}>
+                                        <p>{data.name}</p>----------------------------------------------------<p>{data.price}</p>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+                    <div className="__home_para_comer">
+                        <div className="__home_postres">
+                            {
+                                menu.map(data => (data.category.name ==='POSTRES') && (
+                                    <div className="d-flex justify-content-between m-5" key={data.name}>
+                                        <p>{data.name}</p>-----------------------------------------<p>{data.price}</p>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                        <div className="__home_desayunos">
+                        {
+                                menu.map(data => (data.category.name ==='DESAYUNOS') && (
+                                    <div className="d-flex justify-content-between m-5" key={data.name}>
+                                        <p>{data.name}</p>----------------------------------------------------<p>{data.price}</p>
+                                    </div>
+                                ))
+                            }
+                        </div>
+
+                    </div>
+                </div>
             </section>
             <Footer />
         </div>

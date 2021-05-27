@@ -3,7 +3,13 @@
     flex-direction: column;
     height: 300vh;
     width: 100%;
-    background-color: aquamarine;
+    background: linear-gradient(
+        rgba(145, 49, 49, 0.137),
+        rgba(163, 92, 92, 0.103),
+    ),url('../img/bar.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .treeview{
@@ -12,13 +18,6 @@
 .__home_header{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(
-        rgba(145, 49, 49, 0.137),
-        rgba(163, 92, 92, 0.103),
-    ),url('../img/bar.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 .__home_section1{
     display: flex;
@@ -29,25 +28,81 @@
    
 }
 ._home_section1_sub{
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
     img{
-        width: 30%;
-        height: 60%;
-        margin-top: -80px;
+        width: 100%;
+        // height: 60%;
+        margin-top: -60px;
     }
     h2{
-        margin-top: -250px;
+        margin-top: -60%;
         z-index: 100;
         opacity: .5;
     }
 }
 .__home_menu{
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 120vh;
-    background-color: rgba(222, 228, 223, 0.945);
+    // background-color: rgba(222, 228, 223, 0.945);
 }
 table{
     height: 30px;
+}
+
+// seccion 2 menu 
+.__home_menu_contenido{
+    // border: 2px  solid ;
+    border-collapse: separate ;
+    border-style: double ;
+    border-spacing: 5px 5px;
+    border-width: 15px ;
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+    height: 100vh;
+    margin: auto;
+    width: 85%;
+
+}
+.__home_liquidos{
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+.__home_refrescos{
+    width: 95%;
+    height: 50%;
+    background-color: rgb(89, 116, 116);
+}
+.__home_bebidas_calientes{
+    overflow: auto;
+    width: 95%;
+    height: 50%;
+    background-color: rgb(0, 255, 42);
+}
+.__home_para_comer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background-color: rgb(98, 0, 255);
+}
+.__home_postres{
+    background-color: rgb(255, 0, 212);
+    height: 50%;
+    width: 95%;
+}
+.__home_desayunos{
+    background-color: rgb(229, 255, 0);
+    height: 50%;
+    width: 95%;
 }
