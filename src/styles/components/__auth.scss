@@ -7,6 +7,7 @@
         width: 100%;
         height: 100vh;
         position: relative;
+        background-color: azure;
     }    
     ._login_card{
         width: 95%;
@@ -76,11 +77,26 @@
         }
     }
     ._login_button{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
         margin-top: 20px;
+        text-align: center !important;
         button {
+            width: 40%;
             padding: 10px;
-            color: aliceblue;
-            background-color: darkgoldenrod;
+            color:darkgoldenrod !important;
+            border: 1px solid darkgoldenrod !important;
+            background-color: aliceblue !important;
+            border-radius: 4px !important;
+            box-shadow: 0px 0px 0px 0px !important ;
+            font-weight: 700 !important;
+            &:hover{
+                background-color: darkgoldenrod !important;
+                color: aliceblue !important;
+                box-shadow: 0px 2px 2px 0px grey !important;
+
+            }
         }
     }
     ._login_register{
