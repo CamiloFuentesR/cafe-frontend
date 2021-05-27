@@ -11,11 +11,13 @@
     &:visited{
         color: rgb(233, 107, 4) !important;
     }
-    
     &:hover{
         // background-color: rgba(199, 196, 193, 0.212) ;
         color: rgb(233, 107, 4) !important;
-
+    }
+    &:focus{
+        // background-color: rgba(199, 196, 193, 0.212) ;
+        color: rgb(233, 107, 4) !important;
     }
 }
 ._nav_r{

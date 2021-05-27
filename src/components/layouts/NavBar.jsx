@@ -2,13 +2,13 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { startLogout } from '../../actions/auth.action'
-// import { GoogleLogout } from 'react-google-login';
+import { GoogleLogout } from 'react-google-login';
 
 
 export const NavBar = () => {
 
     const { isLoading } = useSelector(state => state.ui)
-    const { isLogged, /* google */ } = useSelector(state => state.root)
+    const { isLogged, google } = useSelector(state => state.root)
     const dispatch = useDispatch()
     const handleLogout = () => {
         dispatch(startLogout())
@@ -61,13 +61,13 @@ export const NavBar = () => {
                             >logout</button>
                         </div>
                     }
-                        {/* {google &&
+                        {google &&
                             <GoogleLogout
                                 clientId="972085407507-hep118u8486feno87qig2kjn8uelt76v.apps.googleusercontent.com"
                                 buttonText="Logout"
                                 onLogoutSuccess={handleLogout}
                             />
-                        } */}
+                        }
                     </>
                 }
             </div>

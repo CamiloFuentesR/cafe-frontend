@@ -6,8 +6,6 @@ export const startGetbyCategory = (category) => {
     return async (dispatch) => {
         await clienteAxios.get(`/products`)
         .then(({data}) =>{
-
-            
             console.log(data.products) 
             dispatch(getByCategory(data.products))    
         } 

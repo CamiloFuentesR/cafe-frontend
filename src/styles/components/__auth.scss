@@ -7,7 +7,7 @@
         width: 100%;
         height: 100vh;
         position: relative;
-        background-color: rgb(255, 255, 255);
+        background-color: azure;
     }    
     ._login_card{
         width: 95%;
@@ -81,11 +81,10 @@
         flex-direction: row;
         justify-content: space-around;
         margin-top: 20px;
-        text-align: center;
+        text-align: center !important;
         button {
-            text-align: center !important;
             width: 40%;
-            // padding: 10px;
+            padding: 10px;
             color:darkgoldenrod !important;
             border: 1px solid darkgoldenrod !important;
             background-color: aliceblue !important;
@@ -396,9 +395,10 @@
         flex-direction: row;
         justify-content: space-around;
         margin-top: 20px;
+        text-align: center !important;
         button {
-            justify-self: flex-start;
             width: 40%;
+            padding: 10px;
             color:darkgoldenrod !important;
             border: 1px solid darkgoldenrod !important;
             background-color: aliceblue !important;
