@@ -81,10 +81,11 @@
         flex-direction: row;
         justify-content: space-around;
         margin-top: 20px;
-        text-align: center !important;
+        text-align: center;
         button {
+            text-align: center !important;
             width: 40%;
-            padding: 10px;
+            // padding: 10px;
             color:darkgoldenrod !important;
             border: 1px solid darkgoldenrod !important;
             background-color: aliceblue !important;
@@ -395,7 +396,6 @@
         flex-direction: row;
         justify-content: space-around;
         margin-top: 20px;
-        text-align: center !important;
         button {
             width: 40%;
             padding: 10px;
