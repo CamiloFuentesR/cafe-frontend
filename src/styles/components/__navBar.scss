@@ -6,7 +6,7 @@
 .nav-item, .nav-link{
     border-radius: 10px;
     padding: 10px 20px !important;
-    color:  lighten($color: rgb(233, 107, 4), $amount: 10)  ;
+    color:  lighten($color: rgb(233, 107, 4), $amount: 30) !important ;
   
     &:visited{
         color: rgb(233, 107, 4) !important;

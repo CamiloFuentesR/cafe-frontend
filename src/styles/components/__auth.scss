@@ -397,8 +397,8 @@
         justify-content: space-around;
         margin-top: 20px;
         button {
+            justify-self: flex-start;
             width: 40%;
-            padding: 10px;
             color:darkgoldenrod !important;
             border: 1px solid darkgoldenrod !important;
             background-color: aliceblue !important;
