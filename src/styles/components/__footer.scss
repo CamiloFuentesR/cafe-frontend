@@ -9,7 +9,9 @@
     
     .__footer_contactanos{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         width: 100%;
         padding: 20px;
     }
@@ -40,29 +42,33 @@
             color: rgb(255, 255, 255);
         }
     }
+  
     .__footer_horarios{
         width: 100%;
         color: rgb(255, 255, 255);
-    }
-    .__footer_horarios{
         display: flex;
         flex-direction: column;
-        align-items: center;
+      
     }
     
     .__footer_semana{
-        width: 60%;
-        margin: 2px;
-        
-    }
-    
-    .__footer_finde{
-        width: 40%;
-    }
-    .__footer_hr{
+        align-items: center;
+        border-top: 1px solid grey;
+        border-bottom: 1px solid grey;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
         width: 100%;
-        color: aliceblue !important;
     }
+    .__footer_finde{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+        width: 100%;
+
+    }
+   
 }
 
 @media(min-width: 401px){
