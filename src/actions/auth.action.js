@@ -34,8 +34,7 @@ export const startLoginGoogle = (id_token) => {
         try {
             dispatch(startLoading());
             await clienteAxios.post("/auth/google", { id_token })
-            console.log(id_token)
-                .then(({ data }) => {
+                .then(( {data} ) => {
                     localStorage.setItem('token', data.token)
                     dispatch(login({
                         uid: data.user.uid,
@@ -45,6 +44,7 @@ export const startLoginGoogle = (id_token) => {
                     dispatch(endLoading());
                 })
                 .catch(e => {
+                    console.log(e)
                     authMessage(e.response.data)
                     dispatch(endLoading());
                 })

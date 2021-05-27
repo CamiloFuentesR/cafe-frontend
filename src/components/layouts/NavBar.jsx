@@ -14,14 +14,13 @@ export const NavBar = () => {
         dispatch(startLogout())
     }
     return (
-        <nav className={`navbar navbar-expand-sm navbar-dark  justify-content-between sticky-top ${isLoading && 'cargandoNav'} `}>
+        <nav className={`navbar navbar-expand-sm justify-content-between sticky-top ${isLoading && 'cargandoNav'}  `}>
             <div className="navbar-nav  ">
 
-                <div className="">
+                <div className="navbar-nav ">
                     <NavLink
                         focus="false"
-                        activeClassName="active"
-                        className=" nav-link  "
+                        className=" nav-link "
                         to="/home"
                     >Home</NavLink>
 
@@ -33,15 +32,13 @@ export const NavBar = () => {
                     <>
                         <div className="">
                             <NavLink
-                                activeClassName="active"
-                                className=" nav-link  "
+                                className="nav-link  "
                                 to="/auth/login"
                             >Login</NavLink>
                         </div>
                         <div className="_nav">
                             <NavLink
-                                activeClassName="active"
-                                className=" nav-link  "
+                                className="nav-link  "
                                 to="/auth/register"
                             >Register</NavLink>
 
@@ -61,13 +58,13 @@ export const NavBar = () => {
                             >logout</button>
                         </div>
                     }
-                        {google &&
+                        {/* {google &&
                             <GoogleLogout
                                 clientId="972085407507-hep118u8486feno87qig2kjn8uelt76v.apps.googleusercontent.com"
                                 buttonText="Logout"
                                 onLogoutSuccess={handleLogout}
                             />
-                        }
+                        } */}
                     </>
                 }
             </div>

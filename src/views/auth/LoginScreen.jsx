@@ -29,7 +29,6 @@ export const LoginScreen = () => {
     // login google
 
     const responseGoogle = (response) => {
-        console.log(response);
         if(response){
             dispatch(startLoginGoogle(response.tokenId))
         }
