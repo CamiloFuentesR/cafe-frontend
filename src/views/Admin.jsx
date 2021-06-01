@@ -23,19 +23,19 @@ export const Admin = () => {
         .map(user => (
 
             <tbody key={user.name}>
-                <tr className="text-center">
-                    <td className="__user_img_th">
+                <tr className="text-center align-middle ">
+                    <td className="col-1">
                         <div className="__user_img">
                             <img src={user.img !== undefined ? user.img : nouser} alt="imagen perfil" className="img" />
                         </div>
                     </td>
-                    <td >
-                        <div className="__user_td_name">
+                    <td className="col-6" >
+                        <div className="">
                             {user.name}
                         </div>
                     </td>
-                    <td>{user.role}</td>
-                    <td>{user.state ? 'activo' : 'inactivo'}</td>
+                    <td className="col-4">{user.role}</td>
+                    <td className="col-2">{user.state ? 'activo' : 'inactivo'}</td>
                 </tr>
             </tbody>
         ));
@@ -51,11 +51,11 @@ export const Admin = () => {
                 <div className="__user_container">
                     <table className="table table-hover">
                         <thead className="text-center">
-                            <tr>
-                                <th className="__user_img_th">Foto</th>
-                                <th className="__user_name">User</th>
-                                <th className="__user_role">Rol</th>
-                                <th className="__user_state">Estado</th>
+                            <tr >
+                                <th className="">Foto</th>
+                                <th className="">User</th>
+                                <th className="">Rol</th>
+                                <th className="">Estado</th>
                             </tr>
                         </thead>
                         {displayUsers}
