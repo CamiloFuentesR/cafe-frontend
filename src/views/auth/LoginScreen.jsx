@@ -29,10 +29,10 @@ export const LoginScreen = () => {
     // login google
 
     const responseGoogle = (response) => {
-        if(response){
+        if (response) {
             dispatch(startLoginGoogle(response.tokenId))
         }
-      }
+    }
     return (
         <>
             <div className="__login">
@@ -44,23 +44,23 @@ export const LoginScreen = () => {
                         <h1>Login</h1>
                     </div>
                     <form
-                        className="_login_form"
+                        className="d-flex-column mt-5 justify-content-center align-self-center"
                         onSubmit={handleSubmit}
                     >
-                        <div className="_Login_div mt-2">
+                        <div className="d-flex-column justify-content-center mx-2 px-5">
                             {/* <label htmlFor="Email">Email</label> */}
                             <input
                                 autoComplete="off"
                                 type="text"
                                 name="email"
-                                className={`form-control _login_input ${errores.email && 'is-invalid'}`}
+                                className={`form-control _login_input ${errores.email && 'is-invalid'} mt-5`}
                                 placeholder="Email"
                                 value={email}
                                 onChange={handleChange}
                             />
                             {errores.email && <p style={{ color: 'red', fontSize: '14px' }}>{errores.email}</p>}
                         </div>
-                        <div className="_Login_div">
+                        <div className="d-flex-column justify-content-center mx-2 px-5 mb-4 mt-0">
                             {/* <label htmlFor="password">Password</label> */}
                             <input
                                 autoComplete="off"
@@ -77,16 +77,14 @@ export const LoginScreen = () => {
                                     : <p></p>
                             }
                         </div>
-                        <div className="_login_button">
-                        <GoogleLogin
-                            clientId="972085407507-hep118u8486feno87qig2kjn8uelt76v.apps.googleusercontent.com"
-                            buttonText="Login"
-                            onSuccess={responseGoogle}
-                            onFailure={responseGoogle}
+                        <div className="_login_button mx-3">
+                            <GoogleLogin
+                                clientId="972085407507-hep118u8486feno87qig2kjn8uelt76v.apps.googleusercontent.com"
+                                buttonText="Login"
+                                onSuccess={responseGoogle}
+                                onFailure={responseGoogle}
                             // isSignedIn={true} // devuelve la llamada de onsuccess (osea verifica que este logeado)
-                        />
-                        
-                        
+                            />
                             <button type="submit">Ingresar</button>
                         </div>
                         <div className="_login_register mt-2 text-center">
