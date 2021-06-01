@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ReactPaginate from "react-paginate";
 import { useDispatch, useSelector } from 'react-redux';
 import { startLoadUsers } from '../actions/user.action';
+import nouser from '../styles/img/nouser.png'
 
 export const Admin = () => {
 
@@ -14,23 +15,28 @@ export const Admin = () => {
 
     useEffect(() => {
         // if (pagesVisited > 0) {
-            dispatch(startLoadUsers(usersPerPages, pagesVisited))
+        dispatch(startLoadUsers(usersPerPages, pagesVisited))
         // } else {
         //     return dispatch(startLoadUsers(usersPerPages, pagesVisited))
         // }
-        
+
     }, [dispatch, pagesVisited])
 
 
     const displayUsers = users
         // .slice(pagesVisited, pagesVisited + usersPerPages) //sin ssr
         .map(user => (
+            
             <div key={user.name} className="__user_container">
+                <div className="__user_img">
+                    <img src={user.img !== undefined ? user.img : nouser} alt="imagen perfil" className="img"  />
+
+                </div>
                 <h4 className="__user_name">{user.name}</h4>
                 <h4 className="__user_role">{user.role}</h4>
                 <h4 className="__user_state">{user.state ? 'activo' : 'inactivo'}</h4>
                 <div className="form-check form-switch">
-                    <input className="form-check-input" type="checkbox" id={user.name} defaultChecked  />
+                    <input className="form-check-input" type="checkbox" id={user.name} defaultChecked />
                     <label className="form-check-label" htmlFor={user.name}>Checked</label>
                 </div>
             </div>
@@ -44,9 +50,9 @@ export const Admin = () => {
 
     return (
         <div className="__user_screen_container">
-            
+
             <div className="user_table_container">
-            {displayUsers}
+                {displayUsers}
             </div>
             <ReactPaginate
                 previousLabel={"<"}
