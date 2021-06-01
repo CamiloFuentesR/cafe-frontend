@@ -16,9 +16,7 @@ export const Admin = () => {
     useEffect(() => {
         // if (pagesVisited > 0) {
         dispatch(startLoadUsers(usersPerPages, pagesVisited))
-        // } else {
-        //     return dispatch(startLoadUsers(usersPerPages, pagesVisited))
-        // }
+        
 
     }, [dispatch, pagesVisited])
 
@@ -26,20 +24,19 @@ export const Admin = () => {
     const displayUsers = users
         // .slice(pagesVisited, pagesVisited + usersPerPages) //sin ssr
         .map(user => (
-            
-            <div key={user.name} className="__user_container">
-                <div className="__user_img">
-                    <img src={user.img !== undefined ? user.img : nouser} alt="imagen perfil" className="img"  />
 
-                </div>
-                <h4 className="__user_name">{user.name}</h4>
-                <h4 className="__user_role">{user.role}</h4>
-                <h4 className="__user_state">{user.state ? 'activo' : 'inactivo'}</h4>
-                <div className="form-check form-switch">
-                    <input className="form-check-input" type="checkbox" id={user.name} defaultChecked />
-                    <label className="form-check-label" htmlFor={user.name}>Checked</label>
-                </div>
-            </div>
+            <tbody key={user.name}>
+                <tr>
+                    <td>
+                        <div className="__user_img">
+                            <img src={user.img !== undefined ? user.img : nouser} alt="imagen perfil" className="img" />
+                        </div>
+                    </td>
+                    <td>{user.name}</td>
+                    <td>{user.role}</td>
+                    <td>{user.state ? 'activo' : 'inactivo'}</td>
+                </tr>
+            </tbody>
         ));
 
     const pageCount = Math.ceil(totalUsers / usersPerPages);
@@ -52,7 +49,20 @@ export const Admin = () => {
         <div className="__user_screen_container">
 
             <div className="user_table_container">
-                {displayUsers}
+                <div className="__user_container">
+                    <table className="table table-hover">
+                        <thead className="table-dark">
+                            <tr>
+                                <th className="__user_img">Foto</th>
+                                <th className="__user_name">User</th>
+                                <th className="__user_role">Rol</th>
+                                <th className="__user_state">Estado</th>
+                            </tr>
+                        </thead>
+                        {displayUsers}
+                    </table>
+                </div>
+
             </div>
             <ReactPaginate
                 previousLabel={"<"}
