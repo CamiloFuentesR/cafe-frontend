@@ -7,19 +7,16 @@ import nouser from '../styles/img/nouser.png'
 export const Admin = () => {
 
     const dispatch = useDispatch();
-
     const { users, totalUsers } = useSelector(state => state.user)
     const [pageNumber, setPageNumber] = useState(0);
+    
     const usersPerPages = 10;
     const pagesVisited = pageNumber * usersPerPages;
+    const pageCount = Math.ceil(totalUsers / usersPerPages);
 
     useEffect(() => {
-        // if (pagesVisited > 0) {
         dispatch(startLoadUsers(usersPerPages, pagesVisited))
-
-
     }, [dispatch, pagesVisited])
-
 
     const displayUsers = users
         // .slice(pagesVisited, pagesVisited + usersPerPages) //sin ssr
@@ -39,7 +36,6 @@ export const Admin = () => {
             </tbody>
         ));
 
-    const pageCount = Math.ceil(totalUsers / usersPerPages);
 
     function handleChangePage({ selected }) {
         setPageNumber(selected);
@@ -47,11 +43,11 @@ export const Admin = () => {
 
     return (
         <div className="__user_screen_container">
-            <div className="user_table_container"> 
+            <div className="user_table_container">
                 <div className="__user_container">
                     <table className="table table-hover">
-                        <thead className="table-dark sticky-top thead">
-                            <tr>
+                        <thead >
+                            <tr className="thead">
                                 <th className="__user_img">Foto</th>
                                 <th className="__user_name">User</th>
                                 <th className="__user_role">Rol</th>

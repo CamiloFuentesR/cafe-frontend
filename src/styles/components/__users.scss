@@ -49,6 +49,8 @@
         }
     }
     th {
+        background-color:rgb(233, 107, 4) !important ;
+        color: white;
         position: sticky;
         top: 0; 
       }
@@ -104,10 +106,17 @@
             border-radius: 80px;
         }
     }
-    
+  
     th {
+        background-color:darken(rgb(233, 107, 4), 5) !important ;
+        color: white;
         position: sticky;
         top: 0; 
+      }
+      td{
+          color: darken( rgb(233, 107, 4), 5) ;
+          border-bottom: 1px solid darken(rgb(233, 107, 4), 5) !important ;
+          cursor: pointer;
       }
     
 }
