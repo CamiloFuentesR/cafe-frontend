@@ -56,6 +56,8 @@ export const Admin = () => {
                 nextLinkClassName={"nextBtn"}
                 disabledClassName={"paginationDisabled"}
                 activeClassName={"paginationActive"}
+                pageRangeDisplayed={2}
+                marginPagesDisplayed={2}
             />
         </div>
     )
