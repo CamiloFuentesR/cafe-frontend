@@ -1,13 +1,62 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
+import ReactPaginate from "react-paginate";
+import { useDispatch, useSelector } from 'react-redux';
+import { startLoadUsers } from '../actions/user.action';
 
 export const Admin = () => {
 
-    
+    const dispatch = useDispatch();
+
+    const { users, totalUsers } = useSelector(state => state.user)
+    const [pageNumber, setPageNumber] = useState(0);
+    const usersPerPages = 5;
+    const pagesVisited = pageNumber * usersPerPages;
+
+    useEffect(() => {
+        // if (pagesVisited > 0) {
+            dispatch(startLoadUsers(/* usersPerPages, pagesVisited */))
+        // } else {
+        //     return dispatch(startLoadUsers(usersPerPages, pagesVisited))
+        // }
+        
+    }, [dispatch, pagesVisited])
+    console.log(users);
+
+
+    const displayUsers = users
+        .slice(pagesVisited, pagesVisited + usersPerPages) //sin ssr
+        .map(user => (
+            <div key={user.name} className="__user_container">
+                <h4>{user.name}</h4>
+                <div className="form-check form-switch">
+                    <input className="form-check-input" type="checkbox" id={user.name} defaultChecked  />
+                    <label className="form-check-label" htmlFor={user.name}>Checked switch checkbox input</label>
+                </div>
+            </div>
+        ));
+
+    const pageCount = Math.ceil(totalUsers / usersPerPages);
+
+    function handleChangePage({ selected }) {
+        setPageNumber(selected);
+    }
+
     return (
-        <div>
-            <h1>Admin</h1>
-           
+        <div className="__user_screen_container">
+            <div className="user_table_container">
+            {displayUsers}
+            </div>
+            <ReactPaginate
+                previousLabel={"Previus"}
+                nextLabel={"next"}
+                pageCount={pageCount}
+                onPageChange={handleChangePage}
+                containerClassName={"paginationBtns"}
+                previousLinkClassName={"previusBtn"}
+                nextLinkClassName={"nextBtn"}
+                disabledClassName={"paginationDisabled"}
+                activeClassName={"paginationActive"}
+            />
         </div>
     )
 }

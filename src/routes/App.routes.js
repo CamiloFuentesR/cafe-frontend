@@ -21,15 +21,15 @@ export const AppRouter = () => {
     useEffect(() => {
         dispatch(startChecking())
     }, [dispatch])
-    if(checking){
+    if (checking) {
         return <LoadingSpining />
-    } 
+    }
     return (
         <Router>
             <>
                 <NavBar />
                 <div>
-        
+
                     <Switch>
                         <PrivateRouter
 

@@ -7,6 +7,10 @@ export const types = {
     startLogin: '[auth] Login',
 
 
+
+    startLoadUsers : '[user] Load Users',
+    startTotalUsers: '[user] total Users',
+
     startLoading: '[ui] Start Loading',
     endLoading: '[ui] End Loading',
 

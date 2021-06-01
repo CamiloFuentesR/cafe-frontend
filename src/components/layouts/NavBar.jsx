@@ -16,7 +16,8 @@ export const NavBar = () => {
     return (
         <nav className={`navbar navbar-expand-sm justify-content-between sticky-top ${isLoading && 'cargandoNav'}  `}>
             <div className="navbar-nav  ">
-
+        {
+            !isLogged&&
                 <div className="navbar-nav ">
                     <NavLink
                         focus="false"
@@ -25,6 +26,7 @@ export const NavBar = () => {
                     >Home</NavLink>
 
                 </div>
+        }
             </div>
             <div className="_nav_r navbar-nav">
                 {
@@ -52,10 +54,10 @@ export const NavBar = () => {
                     <>{
                         // !google &&
                         <div className="_nav">
-                            <button
-                                className="btn btn-warning"
+                            <div
+                                className="nav-link"
                                 onClick={handleLogout}
-                            >logout</button>
+                            >logout</div>
                         </div>
                     }
                         {/* {google &&

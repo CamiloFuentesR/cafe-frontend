@@ -10,7 +10,7 @@ export const menuReducer = (state = initialState, action) => {
         case types.startGetbyCategory:
             return {
                 ...state,
-                menu: action.payload
+                menu: [...action.payload]
             }
 
         default: 
