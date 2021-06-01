@@ -1,42 +1,100 @@
-.paginationBtns{
-width: 100%;
-display: flex;
-justify-content: center;
-margin: 10px;
-}
-.paginationBtns{
-    padding: 10px;
-    margin: 20px;
-    list-style: none;
-    a{
-        border: 1px solid rgb(233, 107, 4);
+@media(max-width: 370px){
+    .paginationBtns{
+        width: 100%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap ;
         margin: 10px;
-        padding: 10px;
-        color: rgb(233, 107, 4) !important;
-        text-decoration: none;
-        border-radius: 5px;
-        &:hover{
-            color: white !important;
-            background-color: rgb(233, 107, 4) !important;
+        ul{
+            width: 80% !important;
         }
     }
-}
-.previusBtn{
-    border-radius: 5px;
+    
+    .paginationBtns{
+        padding: 10px;
+        margin: 10px;
+        list-style: none;
+        a{
+            border: 1px solid rgb(233, 107, 4);
+            margin: 3px;
+            padding: 4px;
+            color: rgb(233, 107, 4) !important;
+            text-decoration: none;
+            border-radius: 5px;
+            &:hover{
+                color: white !important;
+                background-color: rgb(233, 107, 4) !important;
+            }
+        }
+    }
+    .previusBtn{
+        border-radius: 5px;
+    }
+    
+    .nextBtn{
+        border-radius: 5px;
+    }
+    .paginationDisabled{
+    
+    
+    }
+    
+    .paginationActive a{
+        color: white !important;
+        background-color: rgb(233, 107, 4) !important;
+        border: 1px solid rgb(233, 107, 4);
+        text-decoration: none;
+    
+    }
 }
 
-.nextBtn{
-    border-radius: 5px;
+@media(min-width:371px){
+    .paginationBtns{
+        width: 100%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap ;
+        margin: 10px;
+        ul{
+            width: 80% !important;
+        }
+    }
+    
+    .paginationBtns{
+        padding: 10px;
+        margin: 20px;
+        list-style: none;
+        a{
+            border: 1px solid rgb(233, 107, 4);
+            margin: 5px;
+            padding: 10px;
+            color: rgb(233, 107, 4) !important;
+            text-decoration: none;
+            border-radius: 5px;
+            &:hover{
+                color: white !important;
+                background-color: rgb(233, 107, 4) !important;
+            }
+        }
+    }
+    .previusBtn{
+        border-radius: 5px;
+    }
+    
+    .nextBtn{
+        border-radius: 5px;
+    }
+    
+    .paginationActive a{
+        color: white !important;
+        background-color: rgb(233, 107, 4) !important;
+        border: 1px solid rgb(233, 107, 4);
+        text-decoration: none;
+    
+    }
 }
-.paginationDisabled{
 
 
-}
 
-.paginationActive a{
-    color: white !important;
-    background-color: rgb(233, 107, 4) !important;
-    border: 1px solid rgb(233, 107, 4);
-    text-decoration: none;
-
-}

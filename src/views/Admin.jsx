@@ -9,7 +9,7 @@ export const Admin = () => {
 
     const { users, totalUsers } = useSelector(state => state.user)
     const [pageNumber, setPageNumber] = useState(0);
-    const usersPerPages = 5;
+    const usersPerPages = 1;
     const pagesVisited = pageNumber * usersPerPages;
 
     useEffect(() => {
@@ -47,8 +47,8 @@ export const Admin = () => {
             {displayUsers}
             </div>
             <ReactPaginate
-                previousLabel={"Previus"}
-                nextLabel={"next"}
+                previousLabel={"<"}
+                nextLabel={">"}
                 pageCount={pageCount}
                 onPageChange={handleChangePage}
                 containerClassName={"paginationBtns"}
