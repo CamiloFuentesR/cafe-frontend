@@ -1,6 +1,6 @@
 .__user_screen_container{
     width: 100%;
-    height: 92vh;
+    min-height: 92vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,18 +9,32 @@
 
 }
 .user_table_container{
-    width: 90%;
+    width: 100%;
+    // height: 100%;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     border: 1px solid rgb(233, 107, 4);
+    overflow-x: scroll;
 }
 
 .__user_container{
-    width: 90%;
+    width:max-content !important;
     display: flex;
     margin: 10px;
-    
     justify-content:space-around;
     background-color: aliceblue;
+}
+
+.__user_name{
+    width: 200px ;
+   
+}
+.__user_role{
+    width: 250px;
+}
+
+.__user_state{
+    width: 100px;
 }

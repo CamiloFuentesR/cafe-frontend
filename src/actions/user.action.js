@@ -4,7 +4,7 @@ import { types } from "../types/types";
 
 export const startLoadUsers = (total,from) => {
     return async (dispatch) => {
-            await clienteAxios.get(`/users?limit=100`)
+            await clienteAxios.get(`/users?limit=${total}&from=${from}`)
                 .then(({ data }) => {
                     dispatch(loadUsers(data.users))
                     dispatch(totalUsers(data.total))
