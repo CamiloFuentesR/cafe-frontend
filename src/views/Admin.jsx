@@ -16,7 +16,7 @@ export const Admin = () => {
     useEffect(() => {
         // if (pagesVisited > 0) {
         dispatch(startLoadUsers(usersPerPages, pagesVisited))
-        
+
 
     }, [dispatch, pagesVisited])
 
@@ -47,11 +47,10 @@ export const Admin = () => {
 
     return (
         <div className="__user_screen_container">
-
-            <div className="user_table_container">
+            <div className="user_table_container"> 
                 <div className="__user_container">
                     <table className="table table-hover">
-                        <thead className="table-dark">
+                        <thead className="table-dark sticky-top thead">
                             <tr>
                                 <th className="__user_img">Foto</th>
                                 <th className="__user_name">User</th>

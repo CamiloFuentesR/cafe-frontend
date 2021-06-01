@@ -15,7 +15,6 @@ export const Home = () => {
     return (
         <div className='__home_screen'>
             <header className="__home_header">
-                <h1>header</h1>
             </header>
             <section className="__home_section1">
                 <div className="_home_section1_sub">
