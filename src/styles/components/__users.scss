@@ -48,6 +48,10 @@
             border-radius: 100px;
         }
     }
+    th {
+        position: sticky;
+        top: 0; 
+      }
 }
 
 @media (min-width:371px){
@@ -103,7 +107,7 @@
     
     th {
         position: sticky;
-        top: 0; /* Don't forget this, required for the stickiness */
+        top: 0; 
       }
     
 }
