@@ -23,13 +23,17 @@ export const Admin = () => {
         .map(user => (
 
             <tbody key={user.name}>
-                <tr>
-                    <td>
+                <tr className="text-center">
+                    <td className="__user_img_th">
                         <div className="__user_img">
                             <img src={user.img !== undefined ? user.img : nouser} alt="imagen perfil" className="img" />
                         </div>
                     </td>
-                    <td>{user.name}</td>
+                    <td >
+                        <div className="__user_td_name">
+                            {user.name}
+                        </div>
+                    </td>
                     <td>{user.role}</td>
                     <td>{user.state ? 'activo' : 'inactivo'}</td>
                 </tr>
@@ -46,9 +50,9 @@ export const Admin = () => {
             <div className="user_table_container">
                 <div className="__user_container">
                     <table className="table table-hover">
-                        <thead >
-                            <tr className="thead">
-                                <th className="__user_img">Foto</th>
+                        <thead className="text-center">
+                            <tr>
+                                <th className="__user_img_th">Foto</th>
                                 <th className="__user_name">User</th>
                                 <th className="__user_role">Rol</th>
                                 <th className="__user_state">Estado</th>
