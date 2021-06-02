@@ -22,42 +22,15 @@ export const Admin = () => {
     const displayUsers = users
         // .slice(pagesVisited, pagesVisited + usersPerPages) //sin ssr
         .map(user => (
-
-
-
             <UserComponent
                 user={user}
                 nouser={nouser}
                 key={user.uid}
             />
-
-            // <tbody key={user.name}>
-            //     <tr 
-            //         className="text-center align-middle"
-            //         onClick={handleDelete}
-            //     >
-            //         <td className="col-1">
-            //             <div className="__user_img">
-            //                 <img src={user.img !== undefined ? user.img : nouser} alt="imagen perfil" className="img" />
-            //             </div>
-            //         </td>
-            //         <td className="col-6" >
-            //             <div className="">
-            //                 {user.name}
-            //             </div>
-            //         </td>
-            //         <td className="col-4">{user.role}</td>
-            //         <td className="col-2">{user.state ? 'activo' : 'inactivo'}</td>
-            //     </tr>
-            // </tbody>
         ));
     function handleChangePage({ selected }) {
         setPageNumber(selected);
     }
-
-   
-
-
 
     return (
         <div className="__user_screen_container">

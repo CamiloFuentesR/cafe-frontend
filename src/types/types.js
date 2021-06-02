@@ -6,12 +6,12 @@ export const types = {
     authCheckingFinish: '[Auth] finish login state',
     startLogin: '[Auth] Login',
 
-
-
     startLoadUsers : '[User] Load Users',
     startTotalUsers: '[User] total Users',
     startDeleteUser: '[User] Delete User',
     startUpdateUser: '[User] Update User',
+
+    startLoadingCategories: '[Category] Load Categories',
 
     startLoading: '[Ui] Start Loading',
     endLoading: '[Ui] End Loading',
