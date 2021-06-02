@@ -13,14 +13,12 @@ export const startLoadUsers = (total, from) => {
     }
 }
 
-export const startDeleteUser = (user) => {
+export const startDeleteUser = (id) => {
     return async (dispatch) => {
 
         try {
-            await clienteAxiosToken.delete(`/users/${user.uid}`).then(({data})=>{
-                data.user.state=false
-                dispatch(deleteUser(data.user))
-            }
+            await clienteAxiosToken.delete(`/users/${id}`).then(
+                dispatch(deleteUser(id))
             )
                 .catch(e => console.log(e))
 
@@ -32,9 +30,10 @@ export const startDeleteUser = (user) => {
 
 export const StartUpdateUser = (id, body) => {
     return async (dispatch) => {
+        console.log(body)
         try {
             await clienteAxiosToken.put(`http://localhost:4000/api/users/${id}`, body)
-                .then(({ data }) => dispatch(updateUser(data)))
+                .then(({ data }) => console.log(data))
                 .catch(e => console.log(e.response))
         } catch (error) {
             console.log(error)
@@ -51,10 +50,7 @@ const totalUsers = (data) => ({
     type: types.startTotalUsers,
     payload: data
 })
-const updateUser = (data) => ({
-    type: types.startUpdateUser,
-    payload:data
-})
+
 const deleteUser = (id) => ({
     type: types.startDeleteUser,
     payload: id

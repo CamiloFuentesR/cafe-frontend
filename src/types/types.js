@@ -1,18 +1,20 @@
 export const types = {
 
-    startLogIn: '[auth] Login',
-    startRegister: '[auth] Register',
-    startLogOut: '[auth] Logout cerrar sesión',
-    authCheckingFinish: '[auth] finish login state',
-    startLogin: '[auth] Login',
+    startLogIn: '[Auth] Login',
+    startRegister: '[Auth] Register',
+    startLogOut: '[Auth] Logout cerrar sesión',
+    authCheckingFinish: '[Auth] finish login state',
+    startLogin: '[Auth] Login',
 
 
 
-    startLoadUsers : '[user] Load Users',
-    startTotalUsers: '[user] total Users',
+    startLoadUsers : '[User] Load Users',
+    startTotalUsers: '[User] total Users',
+    startDeleteUser: '[User] Delete User',
+    startUpdateUser: '[User] Update User',
 
-    startLoading: '[ui] Start Loading',
-    endLoading: '[ui] End Loading',
+    startLoading: '[Ui] Start Loading',
+    endLoading: '[Ui] End Loading',
 
 
     startGetbyCategory: '[get] Menu by category'

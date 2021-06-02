@@ -86,6 +86,7 @@
         flex-direction: row;
         justify-content: space-around;
         margin-top: 20px;
+        
         button {
             width: 47%;
             padding: 10px;
@@ -114,6 +115,7 @@
         }
     }
     .form-control{
+        
         &:focus{
             box-shadow: none;
             outline: none;
@@ -392,11 +394,7 @@
         -webkit-text-stroke: .4px black
     }
     }
-    ._login_form{
-        padding: 35px;
-        // position: relative;
-        margin: 0 60px;
-    }
+   
     ._Login_div{
         margin-top: 0px;
         width: 100%;
@@ -419,6 +417,7 @@
         justify-content: space-around;
         margin-top: 20px;
         text-align: center !important;
+        cursor: pointer;
         button {
             width: 45%;
             padding: 10px;

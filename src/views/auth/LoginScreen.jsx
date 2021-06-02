@@ -44,23 +44,23 @@ export const LoginScreen = () => {
                         <h1>Login</h1>
                     </div>
                     <form
-                        className="d-flex-column mt-5 justify-content-center align-self-center"
+                        className="d-flex-column mt-5 "
                         onSubmit={handleSubmit}
                     >
-                        <div className="d-flex-column justify-content-center mx-2 px-5">
+                        <div className="d-flex-column   px-5 col-12">
                             {/* <label htmlFor="Email">Email</label> */}
                             <input
                                 autoComplete="off"
                                 type="text"
                                 name="email"
-                                className={`form-control _login_input ${errores.email && 'is-invalid'} mt-5`}
+                                className={`form-control _login_input ${errores.email && 'is-invalid'} mt-5 `}
                                 placeholder="Email"
                                 value={email}
                                 onChange={handleChange}
                             />
                             {errores.email && <p style={{ color: 'red', fontSize: '14px' }}>{errores.email}</p>}
                         </div>
-                        <div className="d-flex-column justify-content-center mx-2 px-5 mb-4 mt-0">
+                        <div className="d-flex-column  px-5 mb-4 mt-0 col-12">
                             {/* <label htmlFor="password">Password</label> */}
                             <input
                                 autoComplete="off"

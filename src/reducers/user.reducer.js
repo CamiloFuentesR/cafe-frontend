@@ -2,7 +2,8 @@ import { types } from "../types/types";
 
 const initialState = {
    users: [],
-   totalUsers: 0
+   totalUsers: 0,
+   userUpdated: []
 }
 export const userReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -16,6 +17,19 @@ export const userReducer = (state = initialState, action) => {
             return{
                 ...state,
                 totalUsers:action.payload
+            }
+        case types.startDeleteUser:
+            console.log(action.payload)
+            return{
+                ...state,
+                // users : state.users.map(e=> (e.uid  === action.payload.uid) ? action.payload: e),
+                userUpdated: action.payload
+
+            }
+        case types.startUpdateUser:
+            return{
+                ...state,
+                users: state.users.map(e=>(e.uid === action.payload.uid) ? action.payload : e)
             }
         default:
             return state;
