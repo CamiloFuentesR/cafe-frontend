@@ -4,7 +4,7 @@ import { types } from "../types/types";
 
 export const startLoadUsers = (total, from) => {
     return async (dispatch) => {
-        await clienteAxios.get(`http://localhost:4000/api/users?limit=${total}&from=${from}`)
+        await clienteAxios.get(`/users?limit=${total}&from=${from}`)
             .then(({ data }) => {
                 dispatch(loadUsers(data.users))
                 dispatch(totalUsers(data.total))
@@ -33,7 +33,7 @@ export const startDeleteUser = (user) => {
 export const StartUpdateUser = (id, body) => {
     return async (dispatch) => {
         try {
-            await clienteAxiosToken.put(`http://localhost:4000/api/users/${id}`, body)
+            await clienteAxiosToken.put(`/users/${id}`, body)
                 .then(({ data }) => dispatch(updateUser(data)))
                 .catch(e => console.log(e.response))
         } catch (error) {
