@@ -69,7 +69,7 @@ export const Admin = () => {
                                 <th className="">Foto</th>
                                 <th className="">User</th>
                                 <th className="">Rol</th>
-                                <th className="">Estado</th>
+                                <th className="">Inactivo/Activo</th>
                             </tr>
                         </thead>
                         {displayUsers}

@@ -42,7 +42,7 @@ export const UserComponent = ({ user, nouser }) => {
 
                     <div className="form-switch  d-flex-column   flex-wrap justify-content-center">
                         <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked={user.state} onChange={handleChecked} />
-                        <label className="form-check-label" htmlFor="flexSwitchCheckChecked">{ user.state? 'activo' : 'inactivo'}</label>
+                        {/* <label className="form-check-label" htmlFor="flexSwitchCheckChecked">{ user.state? 'activo' : 'inactivo'}</label> */}
                     </div>
                 </td>
             </tr>
