@@ -12,6 +12,7 @@ export const startLogin = (values) => {
             await clienteAxios.post('/auth/login', values)
                 .then(({ data }) => {
                     localStorage.setItem('token', data.token)
+                    localStorage.setItem('token-init-date', new Date().getTime());
                     dispatch(login({
                         uid: data.user.uid,
                         name: data.user.name,
@@ -36,6 +37,7 @@ export const startLoginGoogle = (id_token) => {
             await clienteAxios.post("/auth/google", { id_token })
                 .then(( {data} ) => {
                     localStorage.setItem('token', data.token)
+                    localStorage.setItem('token-init-date', new Date().getTime());
                     dispatch(login({
                         uid: data.user.uid,
                         name: data.user.name,
@@ -62,6 +64,7 @@ export const startRegisgter = (values) => {
                 .then(({ data }) => {
                     console.log(data)
                     localStorage.setItem('token', data.token)
+                    localStorage.setItem('token-init-date', new Date().getTime());
                     dispatch(login({
                         uid: data.user.uid,
                         name: data.user.name
@@ -91,10 +94,10 @@ export const startChecking = () => {
             .then(({ data }) => {
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('token-init-date', new Date().getTime());
-                setTimeout(() => {
-                    dispatch(startLogout())
-                    Swal.fire('Fin de la sesión', `'Su Sesión ha expirado`, 'warning')
-                }, 600000);
+                // setTimeout(() => {
+                //     dispatch(startLogout())
+                //     Swal.fire('Fin de la sesión', `'Su Sesión ha expirado`, 'warning')
+                // }, 600000);
                 dispatch(login({
                     uid: data.uid,
                     name: data.name

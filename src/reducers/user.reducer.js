@@ -19,7 +19,6 @@ export const userReducer = (state = initialState, action) => {
                 totalUsers:action.payload
             }
         case types.startDeleteUser:
-            console.log(action.payload)
             return{
                 ...state,
                 // users : state.users.map(e=> (e.uid  === action.payload.uid) ? action.payload: e),
