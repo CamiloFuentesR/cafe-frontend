@@ -2,7 +2,6 @@ import { clienteAxios, clienteAxiosToken, token } from "../config/axios"
 import { types } from "../types/types";
 import { authMessage } from "../helpers/errorsMsg";
 import { endLoading, startLoading } from "./ui.action";
-import Swal from "sweetalert2";
 
 
 export const startLogin = (values) => {
