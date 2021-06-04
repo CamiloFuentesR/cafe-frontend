@@ -1,57 +1,82 @@
-import { clienteAxios, clienteAxiosToken } from "../config/axios"
-import { types } from "../types/types";
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { startDeleteUser, StartUpdateUser } from '../../actions/user.action'
+import AsyncSelect from 'react-select/async';
 
+export const UserComponent = ({ user, nouser }) => {
 
-export const startLoadUsers = (total, from) => {
-    return async (dispatch) => {
-        await clienteAxios.get(`http://localhost:4000/api/users?limit=${total}&from=${from}`)
-            .then(({ data }) => {
-                dispatch(loadUsers(data.users))
-                dispatch(totalUsers(data.total))
-            })
-            .catch(e => console.log(e));
-    }
-}
+    const dispatch = useDispatch()
 
-export const startDeleteUser = (id) => {
-    return async (dispatch) => {
+    const { roles } = useSelector(state => state.role)
+    const userLabel = roles.map(e => ({
+        label: e.role,
+        value: e.role
+    }))
+    const filterColors = (inputValue) => {
+        return userLabel.filter((i) =>
+            i.label.toLowerCase().includes(inputValue.toLowerCase())
+        );
+    };
 
-        try {
-            await clienteAxiosToken.delete(`/users/${id}`).then(
-                dispatch(deleteUser(id))
-            )
-                .catch(e => console.log(e))
+    const promiseOptions = inputValue =>
 
-        } catch (error) {
-            console.log(error)
+        new Promise(resolve => {
+            resolve(filterColors(inputValue));
+        });
+    const handleDelete = ({ target }) => {
+        if ((target.type === 'checkbox' && user.state)) {
+            user.state = false
+            return dispatch(startDeleteUser(user))
+        }
+        if (target.id === 'role') {
+            console.log('role');
+        }
+        else {
+            user.state = true;
+            dispatch(StartUpdateUser(user.uid, user))
         }
     }
-}
 
-export const StartUpdateUser = (id, body) => {
-    return async (dispatch) => {
-        console.log(body)
-        try {
-            await clienteAxiosToken.put(`http://localhost:4000/api/users/${id}`, body)
-                .then(({ data }) => console.log(data))
-                .catch(e => console.log(e.response))
-        } catch (error) {
-            console.log(error)
-        }
+    const handleChecked = () => {
     }
+
+    const handleOptionSelected = (value) => {
+        //aqui se captura la opcion seleccionada y se hace el dispatch
+
+    }
+    return (
+        <tbody>
+            <tr
+                className="text-center align-middle"
+                onClick={handleDelete}
+            >
+                <td className="col-1">
+                    <div className="__user_img">
+                        <img src={user.img !== undefined ? user.img : nouser} alt="imagen perfil" className="img" />
+                    </div>
+                </td>
+                <td className="col-6" >
+                    {user.name}
+                </td>
+                <td className="col-3" id="role" role="button">
+                    {/* {user.role} */}
+                    <AsyncSelect
+                        cacheOptions
+                        defaultInputValue={user.role}
+                        // defaultValue={{ role: roles.role }}
+                        defaultOptions={true}
+                        loadOptions={promiseOptions}
+                        // getOptionLabel={({ name }) => name}
+                        onChange={handleOptionSelected}
+                    />
+                </td>
+                <td className="col-5 h-100">{/* {user.state ? 'activo' : 'inactivo'} */}
+                    <div className="form-switch  d-flex-column   flex-wrap justify-content-center">
+                        <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked={user.state} onChange={handleChecked} />
+                        {/* <label className="form-check-label" htmlFor="flexSwitchCheckChecked">{ user.state? 'activo' : 'inactivo'}</label> */}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    )
 }
-
-const loadUsers = (data) => ({
-    type: types.startLoadUsers,
-    payload: data
-})
-
-const totalUsers = (data) => ({
-    type: types.startTotalUsers,
-    payload: data
-})
-
-const deleteUser = (id) => ({
-    type: types.startDeleteUser,
-    payload: id
-})

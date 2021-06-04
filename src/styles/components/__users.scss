@@ -47,6 +47,7 @@
         color: white;
         position: sticky;
         top: 0; 
+        z-index: 999;
       }
     td{
         
@@ -107,6 +108,7 @@
         color: white;
         position: sticky;
         top: 0; 
+        z-index: 999;
       }
       td{
           color: darken( rgb(233, 107, 4), 5) ;
@@ -166,6 +168,7 @@
         color: white;
         position: sticky;
         top: 0; 
+        z-index: 999;
       }
       td{
           color: darken( rgb(233, 107, 4), 5) ;
@@ -178,6 +181,4 @@
               cursor: pointer;
           }
       }
-     
-
 }

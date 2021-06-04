@@ -13,6 +13,8 @@ export const types = {
 
     startLoadingCategories: '[Category] Load Categories',
 
+    startLoadingRoles : '[Rol] Load Roles',
+
     startLoading: '[Ui] Start Loading',
     endLoading: '[Ui] End Loading',
 

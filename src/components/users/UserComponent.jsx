@@ -1,20 +1,36 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { startDeleteUser, StartUpdateUser } from '../../actions/user.action'
+import AsyncSelect from 'react-select/async';
 
 export const UserComponent = ({ user, nouser }) => {
 
     const dispatch = useDispatch()
 
+    const { roles } = useSelector(state => state.role);
 
+    const roleLabel = roles.map(r => ({
+        label: r.role,
+        value: r.role
+    }))
+
+    console.log(roleLabel);
+
+    const filterColors = (inputValue) => {
+        return roleLabel.filter((i) =>
+            i.label.toLowerCase().includes(inputValue.toLowerCase())
+        );
+    };
+
+    const promiseOptions = inputValue =>
+        new Promise(resolve => {
+            resolve(filterColors(inputValue));
+        });
     const handleDelete = ({ target }) => {
-        // console.log(id);
-        console.log(target.id);
         if ((target.type === 'checkbox' && user.state)) {
             user.state = false
             return dispatch(startDeleteUser(user))
         }
-        if (target.name === 'role') {
+        if (target.id === 'role') {
             console.log('role');
         }
         else {
@@ -40,7 +56,16 @@ export const UserComponent = ({ user, nouser }) => {
                     {user.name}
                 </td>
                 <td className="col-3" id="role" role="button">
-                    {user.role}
+                    {/* {user.role} */}
+                    <AsyncSelect
+                        cacheOptions
+                        defaultInputValue={user.role}
+                        defaultValue={{ label: user.role }}
+                        defaultOptions={true}
+                        loadOptions={promiseOptions}
+                        // getOptionLabel={({ role }) => role}
+                        className='select'
+                    />
                 </td>
                 <td className="col-5 h-100">{/* {user.state ? 'activo' : 'inactivo'} */}
                     <div className="form-switch  d-flex-column   flex-wrap justify-content-center">
