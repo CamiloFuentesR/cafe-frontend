@@ -16,7 +16,8 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
             resolve(filterColors(inputValue));
         });
     const handleDelete = ({ target }) => {
-        if ((target.type === 'checkbox' && user.state)) {
+        if ((target.type === 'checkbox' && user.state === true)) {
+            console.log(user.state);
             Swal.fire({
                 title: '¿Estas seguro que deseas editar este estado?',
                 text: "¡Esta acción es irreversible!",
@@ -27,7 +28,7 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
                 confirmButtonText: '¡Si, editar este estado!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    user.state = false
+                    user.state = false    
                     dispatch(startDeleteUser(user))
                     Swal.fire(
                         'Role Actualizado!',
@@ -37,7 +38,8 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
                 }
             })
         }
-        else if ((target.type === 'checkbox' && !user.state)) {
+        else if ((target.type === 'checkbox' && user.state === false)) {
+            console.log(user.state);
             Swal.fire({
                 title: '¿Estas seguro que deseas editar este estado?',
                 text: "¡Esta acción es irreversible!",
@@ -49,7 +51,7 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
             }).then((result) => {
                 if (result.isConfirmed) {
                     user.state = true
-                    dispatch(startDeleteUser(user))
+                    dispatch(StartUpdateUser(user.uid,user))
                     Swal.fire(
                         'Role Actualizado!',
                         'Este role ha sido actualizado  ',

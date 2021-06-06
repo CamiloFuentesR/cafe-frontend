@@ -15,7 +15,8 @@ export const startLoadUsers = (total, from) => {
 
 export const startDeleteUser = (user) => {
     return async (dispatch) => {
-
+        
+        // console.log(user)
         try {
             await clienteAxiosToken.delete(`/users/${user.uid}`,{
                 headers: {
@@ -23,7 +24,6 @@ export const startDeleteUser = (user) => {
                     'x-token': token(),
                 }
             }).then(({data})=>{
-                data.user.state=false
                 dispatch(deleteUser(data.user))
             }
             )

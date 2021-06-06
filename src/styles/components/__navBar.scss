@@ -10,8 +10,6 @@
         border-radius: 10px;
         padding: 10px 20px !important;
         color:  lighten($color: rgb(233, 107, 4), $amount: 35) !important;
-      
-      
         &:hover{
             // background-color: rgba(199, 196, 193, 0.212) ;
             color: rgb(233, 107, 4) !important;
@@ -44,9 +42,8 @@
         cursor: pointer;
         margin: 0 20px;
       
-      
         &:hover{
-            // background-color: rgba(199, 196, 193, 0.212) ;
+            background-color: rgba(199, 196, 193, 0.212) ;
             color: rgb(233, 107, 4) !important;
         }
      
