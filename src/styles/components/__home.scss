@@ -124,7 +124,260 @@
         }
     }
 }
+@media (min-width: 400px){
 
+    .__home_screen {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: linear-gradient(
+            rgba(145, 49, 49, 0.137),
+            rgba(163, 92, 92, 0.103),
+        ),url('../img/bar.jpg');
+        background-attachment: attachment;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    
+    .treeview{
+        min-width: 100% ;
+    }
+    .__home_header{
+        width: 100%;
+        height: 40vh;
+    }
+    .__home_section1{
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        height: 70vh;
+        margin-bottom: 30px;
+        width: 100%;
+       
+    }
+    ._home_section1_sub{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img{
+            border: 2px solid grey;
+            border-radius: 7px;
+            width: 100%;
+            // height: 60%;
+            margin-top: -60px;
+        }
+        h2{
+            margin-top: -60%;
+            z-index: 100;
+            opacity: .5;
+        }
+    }
+    .__home_menu{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background: linear-gradient(
+            rgba(145, 49, 49, 0.137),
+            rgba(163, 92, 92, 0.103),
+        ),url('../img/bar.jpg');
+        background-attachment: attachment;
+        background-repeat: no-repeat;
+        background-size: cover;
+        // background-color: rgba(222, 228, 223, 0.945);
+    }
+    table{
+        height: 30px;
+    }
+    
+    // seccion 2 menu 
+    .__home_menu_contenido{
+        border-collapse: separate ;
+        border-style: double ;
+        border-spacing: 5px 5px;
+        border-width: 15px ;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 95%;
+        background-color: beige;
+    
+    }
+    .__home_liquidos{
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    .__home_refrescos{
+        width: 95%;
+        height: 50%;
+        hr{
+            width: 100%;
+            border: medium none;
+            border-top: 1px dashed white!important
+        }
+    }
+    .__home_bebidas_calientes{
+        width: 95%;
+        height: 50%;
+        hr{
+            width: 100%;
+            border: medium none;
+            border-top: 1px dashed white!important
+        }
+    }
+    .__home_para_comer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .__home_postres{
+        width: 95%;
+        hr{
+            width: 100%;
+            border: medium none;
+            border-top: 1px dashed white!important
+        }
+    }
+    .__home_desayunos{
+        height: 50%;
+        width: 95%;
+        hr{
+            width: 100%;
+            border: medium none;
+            border-top: 1px dashed white!important
+        }
+    }
+}
+
+@media (min-width: 700px){
+    .__home_screen {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: linear-gradient(
+            rgba(145, 49, 49, 0.137),
+            rgba(163, 92, 92, 0.103),
+        ),url('../img/bar.jpg');
+        background-attachment: attachment;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    
+    .treeview{
+        min-width: 100% ;
+    }
+    .__home_header{
+        width: 100%;
+        height: 70vh;
+    }
+    .__home_section1{
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        height: 70vh;
+        margin-bottom: 30px;
+        width: 100%;
+       
+    }
+    ._home_section1_sub{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img{
+            border: 2px solid grey;
+            border-radius: 7px;
+            width: 100%;
+            // height: 60%;
+            margin-top: -60px;
+        }
+        h2{
+            margin-top: -60%;
+            z-index: 100;
+            opacity: .5;
+        }
+    }
+    .__home_menu{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background: linear-gradient(
+            rgba(145, 49, 49, 0.137),
+            rgba(163, 92, 92, 0.103),
+        ),url('../img/bar.jpg');
+        background-attachment: attachment;
+        background-repeat: no-repeat;
+        background-size: cover;
+        // background-color: rgba(222, 228, 223, 0.945);
+    }
+    table{
+        height: 30px;
+    }
+    
+    // seccion 2 menu 
+    .__home_menu_contenido{
+        border-collapse: separate ;
+        border-style: double ;
+        border-spacing: 5px 5px;
+        border-width: 15px ;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 95%;
+        background-color: beige;
+    
+    }
+    .__home_liquidos{
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    .__home_refrescos{
+        width: 95%;
+        height: 50%;
+        hr{
+            width: 100%;
+            border: medium none;
+            border-top: 1px dashed white!important
+        }
+    }
+    .__home_bebidas_calientes{
+        width: 95%;
+        height: 50%;
+        hr{
+            width: 100%;
+            border: medium none;
+            border-top: 1px dashed white!important
+        }
+    }
+    .__home_para_comer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .__home_postres{
+        width: 95%;
+        hr{
+            width: 100%;
+            border: medium none;
+            border-top: 1px dashed white!important
+        }
+    }
+    .__home_desayunos{
+        height: 50%;
+        width: 95%;
+        hr{
+            width: 100%;
+            border: medium none;
+            border-top: 1px dashed white!important
+        }
+    }
+}
 
 @media (min-width: 1100px){
     .__home_screen {
@@ -153,7 +406,7 @@
         justify-content: center;
         width: 100%;
         height: 80vh;
-        background-color: azure;
+        background-color: white;
        
     }
     ._home_section1_sub{

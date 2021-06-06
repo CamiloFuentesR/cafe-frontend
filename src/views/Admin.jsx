@@ -10,6 +10,8 @@ export const Admin = () => {
 
     const dispatch = useDispatch();
     const { users, totalUsers } = useSelector(state => state.user)
+    
+
     const [pageNumber, setPageNumber] = useState(0);
     const usersPerPages = 10;
     const pagesVisited = pageNumber * usersPerPages;
@@ -19,7 +21,7 @@ export const Admin = () => {
         dispatch(startLoadingRoles())
         dispatch(startLoadUsers(usersPerPages, pagesVisited))
     }, [dispatch, pagesVisited])
-    
+   
     const displayUsers = users
         // .slice(pagesVisited, pagesVisited + usersPerPages) //sin ssr
         .map(user => (
@@ -27,6 +29,8 @@ export const Admin = () => {
                 user={user}
                 nouser={nouser}
                 key={user.uid}
+                usersPerPages={usersPerPages}
+                pagesVisited={pagesVisited}
             />
         ));
     function handleChangePage({ selected }) {

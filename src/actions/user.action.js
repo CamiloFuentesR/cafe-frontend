@@ -9,7 +9,7 @@ export const startLoadUsers = (total, from) => {
                 dispatch(loadUsers(data.users))
                 dispatch(totalUsers(data.total))
             })
-            .catch(e => console.log(e));
+            .catch(e => console.log(e.response));
     }
 }
 

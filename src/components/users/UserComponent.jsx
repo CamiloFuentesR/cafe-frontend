@@ -1,42 +1,90 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { startDeleteUser, StartUpdateUser } from '../../actions/user.action'
+import { startDeleteUser, startLoadUsers, StartUpdateUser } from '../../actions/user.action'
 import AsyncSelect from 'react-select/async';
+import Swal from 'sweetalert2';
 
-export const UserComponent = ({ user, nouser }) => {
-
+export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => {
+    const { roleOption } = useSelector(state => state.role);
     const dispatch = useDispatch()
-
-    const { roles } = useSelector(state => state.role);
-
-    const roleLabel = roles.map(r => ({
-        label: r.role,
-        value: r.role
-    }))
-
-    console.log(roleLabel);
-
+    console.log(roleOption);
     const filterColors = (inputValue) => {
-        return roleLabel.filter((i) =>
+        return roleOption.filter((i) =>
             i.label.toLowerCase().includes(inputValue.toLowerCase())
         );
     };
-
     const promiseOptions = inputValue =>
         new Promise(resolve => {
             resolve(filterColors(inputValue));
         });
     const handleDelete = ({ target }) => {
         if ((target.type === 'checkbox' && user.state)) {
-            user.state = false
-            return dispatch(startDeleteUser(user))
+            Swal.fire({
+                title: '¿Estas seguro que deseas editar este estado?',
+                text: "¡Esta acción es irreversible!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '¡Si, editar este estado!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    user.state = false
+                    dispatch(startDeleteUser(user))
+                    Swal.fire(
+                        'Role Actualizado!',
+                        'Este role ha sido actualizado  ',
+                        'success'
+                    )
+                }
+            })
         }
-        if (target.id === 'role') {
-            console.log('role');
+        else if ((target.type === 'checkbox' && !user.state)) {
+            Swal.fire({
+                title: '¿Estas seguro que deseas editar este estado?',
+                text: "¡Esta acción es irreversible!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '¡Si, editar este estado!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    user.state = true
+                    dispatch(startDeleteUser(user))
+                    Swal.fire(
+                        'Role Actualizado!',
+                        'Este role ha sido actualizado  ',
+                        'success'
+                    )
+                }
+            })
         }
-        else {
-            user.state = true;
-            dispatch(StartUpdateUser(user.uid, user))
+    }
+
+    const handleRoleChange = (inputValue) => {
+        if (inputValue !== '') {
+            return Swal.fire({
+                title: '¿Estas seguro que deseas editar este role?',
+                text: "¡Esta acción es irreversible!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '¡Si, editar este role!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    user.role = inputValue.value;
+                    dispatch(StartUpdateUser(user.uid, user))
+                    Swal.fire(
+                        'Role Actualizado!',
+                        'Este role ha sido actualizado  ',
+                        'success'
+                    )
+                }
+                dispatch(startLoadUsers(usersPerPages, pagesVisited))
+            })
         }
+
     }
 
     const handleChecked = () => {
@@ -58,13 +106,15 @@ export const UserComponent = ({ user, nouser }) => {
                 <td className="col-3" id="role" role="button">
                     {/* {user.role} */}
                     <AsyncSelect
-                        cacheOptions
+                        // cacheOptions
                         defaultInputValue={user.role}
-                        defaultValue={{ label: user.role }}
-                        defaultOptions={true}
+                        defaultValue={{ label: user.role, value: user.role }}
+                        defaultOptions={roleOption}
                         loadOptions={promiseOptions}
                         // getOptionLabel={({ role }) => role}
                         className='select'
+                        onChange={handleRoleChange}
+                        
                     />
                 </td>
                 <td className="col-5 h-100">{/* {user.state ? 'activo' : 'inactivo'} */}
