@@ -16,7 +16,7 @@ export const DashboardRouter = () => {
             <Switch>
                 <Route
                     exact
-                    path="/home"
+                    path="/"
                     component={Home}
                 />
                 <Route
@@ -34,7 +34,7 @@ export const DashboardRouter = () => {
                     component={AuthRouter}
                 />
 
-                <Redirect to="/home" />
+                <Redirect to="/" />
             </Switch>
         </>
     );
