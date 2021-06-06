@@ -4,8 +4,14 @@ import { types } from "../types/types";
 
 export const startLoadUsers = (total, from) => {
     return async (dispatch) => {
-        await clienteAxios.get(`/users/admin?limit=${total}&from=${from}`)
+        await clienteAxios.get(`http://localhost:4000/api/users/admin?limit=${total}&from=${from}`,{
+            headers: {
+                'Content-type': 'application/json',
+                'x-token': token(),
+            }
+        })
             .then(({ data }) => {
+                console.log(data)
                 dispatch(loadUsers(data.users))
                 dispatch(totalUsers(data.total))
             })
@@ -15,8 +21,7 @@ export const startLoadUsers = (total, from) => {
 
 export const startDeleteUser = (user) => {
     return async (dispatch) => {
-        
-        // console.log(user)
+
         try {
             await clienteAxiosToken.delete(`/users/${user.uid}`,{
                 headers: {
@@ -24,6 +29,7 @@ export const startDeleteUser = (user) => {
                     'x-token': token(),
                 }
             }).then(({data})=>{
+                data.user.state=false
                 dispatch(deleteUser(data.user))
             }
             )

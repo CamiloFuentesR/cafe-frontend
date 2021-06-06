@@ -3,7 +3,7 @@ import {types} from '../types/types'
 
 export const startGetbyCategory = (category) => {
     return async (dispatch) => {
-        await clienteAxios.get(`/products`)
+        await clienteAxios.get(`http://localhost:4000/api/products`)
         .then(({data}) =>{
             dispatch(getByCategory(data.products))    
         } 

@@ -18,6 +18,10 @@ export const roleReducer = (state =initialState, action) => {
                 roleOption: roles.map(e=> ({label:e.role,value:e.role})),
                 roles: [...action.payload]
             }
+            case types.startLogOut:
+            return {
+                roles: []
+            }
         default:
             return state;
     }

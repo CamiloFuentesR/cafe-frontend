@@ -30,6 +30,13 @@ export const userReducer = (state = initialState, action) => {
                 ...state,
                 users: state.users.map(e=>(e.uid === action.payload.uid) ? action.payload : e)
             }
+            case types.startLogOut:
+                return {
+                    users: [],
+                    totalUsers: 0,
+                    userUpdated: []
+
+                }
         default:
             return state;
     }
