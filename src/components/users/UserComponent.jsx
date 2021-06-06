@@ -6,7 +6,6 @@ import Swal from 'sweetalert2';
 export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => {
     const { roleOption } = useSelector(state => state.role);
     const dispatch = useDispatch()
-    console.log(roleOption);
     const filterColors = (inputValue) => {
         return roleOption.filter((i) =>
             i.label.toLowerCase().includes(inputValue.toLowerCase())
@@ -63,7 +62,7 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
 
     const handleRoleChange = (inputValue) => {
         if (inputValue !== '') {
-            return Swal.fire({
+             Swal.fire({
                 title: '¿Estas seguro que deseas editar este role?',
                 text: "¡Esta acción es irreversible!",
                 icon: 'warning',
@@ -81,11 +80,12 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
                         'success'
                     )
                 }
-                dispatch(startLoadUsers(usersPerPages, pagesVisited))
+                dispatch(startLoadUsers(usersPerPages,pagesVisited))
             })
         }
 
     }
+    
 
     const handleChecked = () => {
     }
@@ -106,7 +106,7 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
                 <td className="col-3" id="role" role="button">
                     {/* {user.role} */}
                     <AsyncSelect
-                        // cacheOptions
+                        cacheOptions
                         defaultInputValue={user.role}
                         defaultValue={{ label: user.role, value: user.role }}
                         defaultOptions={roleOption}

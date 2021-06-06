@@ -13,7 +13,6 @@ export const roleReducer = (state =initialState, action) => {
 
         case types.startLoadingRoles :
             let roles = action.payload;
-            console.log(roles)
             return {
                 ...state,
                 roleOption: roles.map(e=> ({label:e.role,value:e.role})),
