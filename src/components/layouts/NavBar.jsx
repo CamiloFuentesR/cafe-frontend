@@ -6,7 +6,7 @@ import { startLogout } from '../../actions/auth.action'
 
 
 export const NavBar = () => {
-
+    const { role } = useSelector(state => state.root)
     const { isLoading } = useSelector(state => state.ui)
     const { isLogged, /* google */ } = useSelector(state => state.root)
     const dispatch = useDispatch()
@@ -14,19 +14,48 @@ export const NavBar = () => {
         dispatch(startLogout())
     }
     return (
-        <nav className={`navbar navbar-expand-sm justify-content-between sticky-top ${isLoading && 'cargandoNav'}  `}>
+        <nav className={`navbar navbar-expand-sm  sticky-top ${isLoading && 'cargandoNav'}  `}>
             <div className="navbar-nav  ">
-        {
-            !isLogged&&
-                <div className="navbar-nav ">
-                    <NavLink
-                        focus="false"
-                        className=" nav-link "
-                        to="/home"
-                    >Home</NavLink>
+                {
+                    !isLogged &&
+                    <div className="navbar-nav ">
+                        <NavLink
+                            focus="false"
+                            className=" nav-link "
+                            to="/home"
+                        >Home</NavLink>
 
-                </div>
-        }
+                    </div>
+                }
+                {
+                    (isLogged && role === "ADMIN_ROLE") &&
+                    <>
+                        <div className="navbar-nav ">
+                            <NavLink
+                                focus="false"
+                                className=" nav-link "
+                                to="/admin/profile"
+                            >Perfil</NavLink>
+
+                        </div>
+                        <div className="navbar-nav ">
+                            <NavLink
+                                focus="false"
+                                className=" nav-link "
+                                to="/admin/user"
+                            >Usuarios</NavLink>
+
+                        </div>
+                        <div className="navbar-nav ">
+                            <NavLink
+                                focus="false"
+                                className=" nav-link "
+                                to="/admin/products"
+                            >Productos</NavLink>
+
+                        </div>
+                    </>
+                }
             </div>
             <div className="_nav_r navbar-nav">
                 {

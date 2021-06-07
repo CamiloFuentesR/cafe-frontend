@@ -40,7 +40,6 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
             })
         }
         else if ((target.type === 'checkbox' && user.state === false)) {
-            console.log(user.state);
             Swal.fire({
                 title: '¿Desea activar este usuario?',
                 text: "¡Este usuario tendrá acceso al sistema!",

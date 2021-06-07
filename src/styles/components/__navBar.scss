@@ -1,15 +1,23 @@
 
 @media(max-width: 400px){
     .navbar{
+        display: flex;
+        flex-direction: row;
         position: sticky ;
         top: 0;
         background-color: rgb(255, 255, 255);
-       
+       text-align: center;
+        
+    }
+    .navbar-nav{
+        display: flex !important;
+        flex-direction: row;
     }
     .nav-item, .nav-link{
+        width: 78px;
         border-radius: 10px;
-        padding: 10px 20px !important;
         color:  lighten($color: rgb(233, 107, 4), $amount: 35) !important;
+        font-size: 12px;
         &:hover{
             // background-color: rgba(199, 196, 193, 0.212) ;
             color: rgb(233, 107, 4) !important;
@@ -28,22 +36,25 @@
 }
 
 @media(min-width: 400px){
-
     .navbar{
+        display: flex;
+        flex-direction: row;
         position: sticky ;
         top: 0;
         background-color: rgb(255, 255, 255);
-       
+       text-align: center;
+        
+    }
+    .navbar-nav{
+        display: flex !important;
+        flex-direction: row;
     }
     .nav-item, .nav-link{
+        width: 98px;
         border-radius: 10px;
-        padding: 10px 20px !important;
-        color:  lighten($color: rgb(255, 51, 0), $amount: 25) !important;
-        cursor: pointer;
-        margin: 0 20px;
-      
+        color:  lighten($color: rgb(233, 107, 4), $amount: 35) !important;
         &:hover{
-            background-color: rgba(199, 196, 193, 0.212) ;
+            // background-color: rgba(199, 196, 193, 0.212) ;
             color: rgb(233, 107, 4) !important;
         }
      

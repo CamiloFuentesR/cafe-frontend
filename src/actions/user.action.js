@@ -4,14 +4,13 @@ import { types } from "../types/types";
 
 export const startLoadUsers = (total, from) => {
     return async (dispatch) => {
-        await clienteAxios.get(`/users/admin?limit=${total}&from=${from}`,{
+        await clienteAxios.get(`/users/admin?limit=${total}&from=${from}`, {
             headers: {
                 'Content-type': 'application/json',
                 'x-token': token(),
             }
         })
             .then(({ data }) => {
-                console.log(data)
                 dispatch(loadUsers(data.users))
                 dispatch(totalUsers(data.total))
             })
@@ -23,13 +22,13 @@ export const startDeleteUser = (user) => {
     return async (dispatch) => {
 
         try {
-            await clienteAxiosToken.delete(`/users/${user.uid}`,{
+            await clienteAxiosToken.delete(`/users/${user.uid}`, {
                 headers: {
                     'Content-type': 'application/json',
                     'x-token': token(),
                 }
-            }).then(({data})=>{
-                data.user.state=false
+            }).then(({ data }) => {
+                data.user.state = false
                 dispatch(deleteUser(data.user))
             }
             )
@@ -44,11 +43,12 @@ export const startDeleteUser = (user) => {
 export const StartUpdateUser = (id, body) => {
     return async (dispatch) => {
         try {
-            await clienteAxiosToken.put(`/users/${id}`, body,{
+            await clienteAxiosToken.put(`/users/${id}`, body, {
                 headers: {
                     'Content-type': 'application/json',
                     'x-token': token(),
-                }})
+                }
+            })
                 .then(({ data }) => dispatch(updateUser(data)))
                 .catch(e => console.log(e.response))
         } catch (error) {
@@ -68,7 +68,7 @@ const totalUsers = (data) => ({
 })
 const updateUser = (data) => ({
     type: types.startUpdateUser,
-    payload:data
+    payload: data
 })
 const deleteUser = (id) => ({
     type: types.startDeleteUser,

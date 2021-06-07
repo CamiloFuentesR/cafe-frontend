@@ -4,8 +4,8 @@ import {
     Route,
     Redirect,
 } from "react-router-dom";
-import { Admin } from "../views/Admin";
-
+import { Products } from "../views/ProductsScreen";
+import { ProfileScreen } from "../views/ProfileScreen";
 
 export const AuthorizedRouter = () => {
 
@@ -14,10 +14,20 @@ export const AuthorizedRouter = () => {
             <Switch>
                 <Route
                     exact
-                    path="/logged/user"
-                    component={Admin}
+                    path="/logged/profile"
+                    component={ProfileScreen}
                 />
-                <Redirect to="/logged/user" />
+                <Route
+                    exact
+                    path="/logged/proudcts"
+                    component={Products}
+                />
+                {/* <Route
+                    exact
+                    path="/logged/admin/user"
+                    component={Admin}
+                /> */}
+                <Redirect to="/logged/profile" />
             </Switch>
         </>
     );

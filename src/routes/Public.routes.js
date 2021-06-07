@@ -9,10 +9,8 @@ export const PublicRouter = ({
     component: Component,
     ...rest
 }
-
 ) => {
     return (
-        
         <Route {...rest}
             component={(props) => (
                 //pregunta si esta autenticado
@@ -20,7 +18,7 @@ export const PublicRouter = ({
                     //si esta atenticado carga este componente
                     ? (<Component {...props} />)
                     //si no esta autenticado solo carga el componente del login
-                    : (<Redirect to="/logged" />)
+                    : (<Redirect to="/admin" />)
             )}
         />
     )

@@ -13,6 +13,8 @@ import { AuthorizedRouter } from "./Authorized.routes";
 import { useDispatch, useSelector } from "react-redux";
 import { startChecking } from "../actions/auth.action";
 import { LoadingSpining } from "../components/ui/LoadingSpining";
+import { AdminRouter } from "./Admin.routes";
+import { AdminConfig } from "./AdminConfig.routes";
 
 export const AppRouter = () => {
     const { isLogged, checking } = useSelector(state => state.root)
@@ -30,17 +32,23 @@ export const AppRouter = () => {
                 <NavBar />
                 <div>
                     <Switch>
+                        <AdminRouter
+                            path="/admin"
+                            component={AdminConfig}
+                            isAuthenticated={isLogged}
+                        />
                         <PrivateRouter
                             path="/logged"
                             component={AuthorizedRouter}
                             isAuthenticated={isLogged}
                         />
+                        {/* todas las rutas deben ir sobre esta o sino sale error */}
                         <PublicRouter
                             path="/"
                             component={DashboardRouter}
                             isAuthenticated={isLogged}
                         />
-                        <Redirect to="/logged/user" />
+                        <Redirect to="/admin" />
                     </Switch>
                 </div>
             </>

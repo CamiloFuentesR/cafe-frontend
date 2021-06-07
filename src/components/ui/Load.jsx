@@ -7,14 +7,16 @@ export const Load = () => {
     const lottieRef = useRef();
     return (
         <div className="cargando">
-             <Lottie 
-                lottieRef={lottieRef}
-                animationData={tacos}
-                loop={true}
-                autoPlay={true}
-                style={{width: '35%' }}
-                className="cargando"
+            <div className="lottie">
+                <Lottie
+                    lottieRef={lottieRef}
+                    animationData={tacos}
+                    loop={true}
+                    autoPlay={true}
+                    style={{ width: '100%' }}
+                    className="cargando"
                 />
+            </div>
         </div>
     )
 }

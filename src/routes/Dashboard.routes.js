@@ -4,9 +4,9 @@ import {
     Route,
     Redirect,
 } from "react-router-dom";
-import { Home } from "../views/Home";
-import { Products } from "../views/Products";
-import { Users } from "../views/Users";
+import { Home } from "../views/HomeScreen";
+import { Products } from "../views/ProductsScreen";
+import { Users } from "../views/UsersScreen";
 import { AuthRouter } from "./Auth.routes";
 
 export const DashboardRouter = () => {
@@ -33,7 +33,6 @@ export const DashboardRouter = () => {
                     path="/auth"
                     component={AuthRouter}
                 />
-
                 <Redirect to="/" />
             </Switch>
         </>

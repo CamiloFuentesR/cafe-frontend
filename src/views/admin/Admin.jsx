@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import ReactPaginate from "react-paginate";
 import { useDispatch, useSelector } from 'react-redux';
-import { startLoadUsers } from '../actions/user.action';
-import { UserComponent } from '../components/users/UserComponent';
-import nouser from '../styles/img/nouser.png'
-import { startLoadingRoles } from '../actions/role.action';
-import { SuccessMessage } from '../components/ui/SuccessMessage';
+import { startLoadUsers } from '../../actions/user.action';
+import { UserComponent } from '../../components/users/UserComponent';
+import nouser from '../../styles/img/nouser.png'
+import { startLoadingRoles } from '../../actions/role.action';
+import { SuccessMessage } from '../../components/ui/SuccessMessage';
 
 export const Admin = () => {
 

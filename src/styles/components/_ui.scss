@@ -1,4 +1,5 @@
-.cargando{
+@media (max-width: 400px){
+  .cargando{
     display: flex;
     justify-content: center;
     height: 110vh;
@@ -7,6 +8,49 @@
     // background-color: rgba(0, 0, 0, 0.158)  !important;
     backdrop-filter: blur(2px)  contrast(.8) ;
 }
+.lottie{
+  width: 50%;
+  align-content: center;
+  justify-content: center;
+}
+}
+@media (min-width: 400px)and (max-width:800px){
+  .cargando{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 110vh;
+    width: 100%;
+    z-index: 99999 !important;
+    // background-color: rgba(0, 0, 0, 0.158)  !important;
+    backdrop-filter: blur(2px)  contrast(.8) ;
+  }
+  .lottie{
+    width: 40%;
+    align-content: center;
+    justify-content: center;
+  }
+}
+
+
+@media (min-width: 800px){
+  .cargando{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 110vh;
+    width: 100%;
+    z-index: 99999 !important;
+    // background-color: rgba(0, 0, 0, 0.158)  !important;
+    backdrop-filter: blur(2px)  contrast(.8) ;
+  }
+  .lottie{
+    width: 20%;
+    align-content: center;
+    justify-content: center;
+  }
+}
+
 .cargandoNav{
     display: none;
 }

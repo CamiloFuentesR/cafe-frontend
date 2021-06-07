@@ -15,6 +15,7 @@ export const startLogin = (values) => {
                     dispatch(login({
                         uid: data.user.uid,
                         name: data.user.name,
+                        role: data.user.role,
                         google: data.user.google
                     }));
                     dispatch(endLoading());
@@ -40,6 +41,7 @@ export const startLoginGoogle = (id_token) => {
                     dispatch(login({
                         uid: data.user.uid,
                         name: data.user.name,
+                        role: data.user.role,
                         google: data.user.google
                     }))
                     dispatch(endLoading());
@@ -99,7 +101,8 @@ export const startChecking = () => {
                 // }, 600000);
                 dispatch(login({
                     uid: data.uid,
-                    name: data.name
+                    name: data.name,
+                    role: data.role
                 }));
                 dispatch(checkingFinish());
             })
