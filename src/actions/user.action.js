@@ -4,7 +4,7 @@ import { types } from "../types/types";
 
 export const startLoadUsers = (total, from) => {
     return async (dispatch) => {
-        await clienteAxios.get(`http://localhost:4000/api/users/admin?limit=${total}&from=${from}`,{
+        await clienteAxios.get(`/users/admin?limit=${total}&from=${from}`,{
             headers: {
                 'Content-type': 'application/json',
                 'x-token': token(),
