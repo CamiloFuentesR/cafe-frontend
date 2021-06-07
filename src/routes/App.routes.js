@@ -29,10 +29,8 @@ export const AppRouter = () => {
             <>
                 <NavBar />
                 <div>
-
                     <Switch>
                         <PrivateRouter
-
                             path="/logged"
                             component={AuthorizedRouter}
                             isAuthenticated={isLogged}
@@ -41,11 +39,9 @@ export const AppRouter = () => {
                             path="/"
                             component={DashboardRouter}
                             isAuthenticated={isLogged}
-
                         />
                         <Redirect to="/logged/user" />
                     </Switch>
-
                 </div>
             </>
         </Router>

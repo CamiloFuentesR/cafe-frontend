@@ -10,7 +10,6 @@ export const Admin = () => {
 
     const dispatch = useDispatch();
     const { users, totalUsers } = useSelector(state => state.user)
-    console.log(users);
 
     const [pageNumber, setPageNumber] = useState(0);
     const usersPerPages = 10;
@@ -38,59 +37,38 @@ export const Admin = () => {
     }
     return (
         <div className="__user_screen_container">
-            {
-                !!users ?
-                    <>
-                        <div className="user_table_container">
-                            <div className="__user_container">
-                                <table className="table table-hover">
-                                    <thead>
-                                        <tr>
+            <>
+                <div className="user_table_container">
+                    <div className="__user_container">
+                        <table className="table table-hover">
+                            <thead className="text-center">
+                                <tr >
+                                    <th className="">Foto</th>
+                                    <th className="">User</th>
+                                    <th className="">Rol</th>
+                                    <th className="">Inactivo/Activo</th>
+                                </tr>
+                            </thead>
 
-                                            <th>
-                                                No hay datos para mostrar
+                            {displayUsers}
+                        </table>
+                    </div>
 
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                </table>
-                            </div>
-                        </div>
-                    </>
-                    :
-                    <>
-                        <div className="user_table_container">
-                            <div className="__user_container">
-                                <table className="table table-hover">
-                                    <thead className="text-center">
-                                        <tr >
-                                            <th className="">Foto</th>
-                                            <th className="">User</th>
-                                            <th className="">Rol</th>
-                                            <th className="">Inactivo/Activo</th>
-                                        </tr>
-                                    </thead>
-
-                                    {displayUsers}
-                                </table>
-                            </div>
-
-                        </div>
-                        <ReactPaginate
-                            previousLabel={"<"}
-                            nextLabel={">"}
-                            pageCount={pageCount}
-                            onPageChange={handleChangePage}
-                            containerClassName={"paginationBtns"}
-                            previousLinkClassName={"previusBtn"}
-                            nextLinkClassName={"nextBtn"}
-                            disabledClassName={"paginationDisabled"}
-                            activeClassName={"paginationActive"}
-                            pageRangeDisplayed={2}
-                            marginPagesDisplayed={2}
-                        />
-                    </>
-            }
+                </div>
+                <ReactPaginate
+                    previousLabel={"<"}
+                    nextLabel={">"}
+                    pageCount={pageCount}
+                    onPageChange={handleChangePage}
+                    containerClassName={"paginationBtns"}
+                    previousLinkClassName={"previusBtn"}
+                    nextLinkClassName={"nextBtn"}
+                    disabledClassName={"paginationDisabled"}
+                    activeClassName={"paginationActive"}
+                    pageRangeDisplayed={2}
+                    marginPagesDisplayed={2}
+                />
+            </>
         </div>
     )
 }

@@ -11,7 +11,6 @@ export const startLoadUsers = (total, from) => {
             }
         })
             .then(({ data }) => {
-                console.log(data)
                 dispatch(loadUsers(data.users))
                 dispatch(totalUsers(data.total))
             })
