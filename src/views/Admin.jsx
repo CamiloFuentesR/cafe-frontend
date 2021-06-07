@@ -5,6 +5,7 @@ import { startLoadUsers } from '../actions/user.action';
 import { UserComponent } from '../components/users/UserComponent';
 import nouser from '../styles/img/nouser.png'
 import { startLoadingRoles } from '../actions/role.action';
+import { SuccessMessage } from '../components/ui/SuccessMessage';
 
 export const Admin = () => {
 
@@ -69,6 +70,7 @@ export const Admin = () => {
                     marginPagesDisplayed={2}
                 />
             </>
+            <SuccessMessage/>
         </div>
     )
 }

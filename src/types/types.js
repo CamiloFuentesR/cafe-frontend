@@ -17,6 +17,8 @@ export const types = {
 
     startLoading: '[Ui] Start Loading',
     endLoading: '[Ui] End Loading',
+    startSuccessMessage: '[Ui] Show Messague',
+    endSuccessMessage: '[Ui] Close Message',
 
 
     startGetbyCategory: '[get] Menu by category'

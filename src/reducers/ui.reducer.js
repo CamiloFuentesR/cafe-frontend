@@ -2,6 +2,7 @@ import { types } from "../types/types";
 
 const initialState = {
     isLoading: false,
+    successMessage:false
 }
 export const uiReducer = (state = initialState, action) => {
 
@@ -14,6 +15,15 @@ export const uiReducer = (state = initialState, action) => {
             return {
                 isLoading: false
             }
+        case types.startSuccessMessage: 
+            return {
+                successMessage: true
+            }
+        case types.endSuccessMessage: 
+            return {
+                successMessage: false
+            }
+        
         default:
             return state;
     }

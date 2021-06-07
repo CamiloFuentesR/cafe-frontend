@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { startDeleteUser, startLoadUsers, StartUpdateUser } from '../../actions/user.action'
+import { startDeleteUser, StartUpdateUser } from '../../actions/user.action'
 import AsyncSelect from 'react-select/async';
 import Swal from 'sweetalert2';
+import { startSuccessMessage } from '../../actions/ui.action';
 
 export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => {
     const { roleOption } = useSelector(state => state.role);
@@ -19,20 +20,20 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
         if ((target.type === 'checkbox' && user.state === true)) {
             console.log(user.state);
             Swal.fire({
-                title: '¿Estas seguro que deseas editar este estado?',
-                text: "¡Esta acción es irreversible!",
+                title: '¿Estas seguro que deseas eliminar este usuario?',
+                text: "¡Este usuario no  tendrá acceso al sistema!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: '¡Si, editar este estado!'
+                confirmButtonText: '¡Si, eliminar este usuario!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    user.state = false    
+                    user.state = false
                     dispatch(startDeleteUser(user))
                     Swal.fire(
-                        'Role Actualizado!',
-                        'Este role ha sido actualizado  ',
+                        'Usuario Eliminado!',
+                        'Este usuario no tendrá acceso al sistema',
                         'success'
                     )
                 }
@@ -41,20 +42,20 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
         else if ((target.type === 'checkbox' && user.state === false)) {
             console.log(user.state);
             Swal.fire({
-                title: '¿Estas seguro que deseas editar este estado?',
-                text: "¡Esta acción es irreversible!",
+                title: '¿Desea activar este usuario?',
+                text: "¡Este usuario tendrá acceso al sistema!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: '¡Si, editar este estado!'
+                confirmButtonText: '¡Si, activar!'
             }).then((result) => {
                 if (result.isConfirmed) {
                     user.state = true
-                    dispatch(StartUpdateUser(user.uid,user))
+                    dispatch(StartUpdateUser(user.uid, user))
                     Swal.fire(
-                        'Role Actualizado!',
-                        'Este role ha sido actualizado  ',
+                        'Usuario Activado!',
+                        'Este usuario ha sido activado  ',
                         'success'
                     )
                 }
@@ -63,31 +64,12 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
     }
 
     const handleRoleChange = (inputValue) => {
-        if (inputValue !== '') {
-             Swal.fire({
-                title: '¿Estas seguro que deseas editar este role?',
-                text: "¡Esta acción es irreversible!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: '¡Si, editar este role!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    user.role = inputValue.value;
-                    dispatch(StartUpdateUser(user.uid, user))
-                    Swal.fire(
-                        'Role Actualizado!',
-                        'Este role ha sido actualizado  ',
-                        'success'
-                    )
-                }
-                dispatch(startLoadUsers(usersPerPages,pagesVisited))
-            })
-        }
-
+        dispatch(startSuccessMessage())
+        user.role = inputValue.value;
+        dispatch(StartUpdateUser(user.uid, user))
+        // dispatch(startLoadUsers(usersPerPages, pagesVisited))
     }
-    
+
 
     const handleChecked = () => {
     }
@@ -116,7 +98,7 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
                         // getOptionLabel={({ role }) => role}
                         className='select'
                         onChange={handleRoleChange}
-                        
+
                     />
                 </td>
                 <td className="col-5 h-100">{/* {user.state ? 'activo' : 'inactivo'} */}

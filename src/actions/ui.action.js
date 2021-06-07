@@ -9,3 +9,10 @@ export const endLoading = () => ({
     type: types.endLoading,
     payload: false
 })
+
+export const startSuccessMessage = () => ({
+    type: types.startSuccessMessage,
+})
+export const endSuccessMessage = () => ({
+    type: types.endSuccessMessage
+})
