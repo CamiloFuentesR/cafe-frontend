@@ -18,7 +18,7 @@
         a{
             border: 1px solid rgb(233, 107, 4);
             margin: 3px;
-            padding: 4px;
+            padding: 6px;
             color: rgb(233, 107, 4) !important;
             text-decoration: none;
             border-radius: 5px;
@@ -29,11 +29,13 @@
         }
     }
     .previusBtn{
-        border-radius: 5px;
+        // border-radius: 5px;
+        display: none;
     }
     
     .nextBtn{
         border-radius: 5px;
+        display: none;
     }
   
     
@@ -66,7 +68,7 @@
         a{
             border: 1px solid rgb(233, 107, 4);
             margin: 5px;
-            padding: 10px;
+            padding: 10px 15px;
             color: rgb(233, 107, 4) !important;
             text-decoration: none;
             border-radius: 5px;
@@ -78,10 +80,12 @@
     }
     .previusBtn{
         border-radius: 5px;
+        display: none;
     }
     
     .nextBtn{
         border-radius: 5px;
+        display: none;
     }
     
     .paginationActive a{

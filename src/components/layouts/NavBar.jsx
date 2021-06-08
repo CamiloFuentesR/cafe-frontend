@@ -14,7 +14,7 @@ export const NavBar = () => {
         dispatch(startLogout())
     }
     return (
-        <nav className={`navbar navbar-expand-sm  sticky-top ${isLoading && 'cargandoNav'}  `}>
+        <nav className={`navbar navbar-expand-sm justify-content-between sticky-top ${isLoading && 'cargandoNav'}  `}>
             <div className="navbar-nav  ">
                 {
                     !isLogged &&
@@ -79,7 +79,6 @@ export const NavBar = () => {
                 }
                 {
                     isLogged &&
-
                     <>{
                         // !google &&
                         <div className="_nav">

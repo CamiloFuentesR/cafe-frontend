@@ -22,11 +22,7 @@ export const AuthorizedRouter = () => {
                     path="/logged/proudcts"
                     component={Products}
                 />
-                {/* <Route
-                    exact
-                    path="/logged/admin/user"
-                    component={Admin}
-                /> */}
+            
                 <Redirect to="/logged/profile" />
             </Switch>
         </>

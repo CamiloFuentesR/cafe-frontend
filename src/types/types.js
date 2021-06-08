@@ -11,7 +11,10 @@ export const types = {
     startDeleteUser: '[User] Delete User',
     startUpdateUser: '[User] Update User',
 
-    startLoadingCategories: '[Category] Load Categories',
+    startPrudctLoading: '[Product] Load Product',
+
+
+    startGetbyCategory: '[Category] Menu by category',
 
     startLoadingRoles : '[Rol] Load Roles',
 
@@ -21,5 +24,4 @@ export const types = {
     endSuccessMessage: '[Ui] Close Message',
 
 
-    startGetbyCategory: '[get] Menu by category'
 }

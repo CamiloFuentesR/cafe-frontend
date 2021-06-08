@@ -116,7 +116,6 @@
       }
       .form-switch, .form-check-input, .form-check-label{
         input{
-
             cursor: pointer;
         }
     }
@@ -161,7 +160,12 @@
             border-radius: 80px;
         }
     }
-  
+    .select{
+        cursor: pointer !important;
+        svg{
+        cursor: pointer !important;
+        }
+    }
   
     th {
         background-color:darken(rgb(233, 107, 4), 5) !important ;
@@ -177,8 +181,10 @@
       }
       .form-switch, .form-check-input, .form-check-label{
           input{
-
               cursor: pointer;
           }
+      }
+      .css-g1d714-ValueContainer{
+        cursor: pointer;
       }
 }

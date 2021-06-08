@@ -4,7 +4,7 @@ import {
     Route,
     Redirect,
 } from "react-router-dom";
-import { Admin } from "../views/admin/Admin";
+import {AdminUsers} from "../views/admin/AdminUsers"
 import { AdminProfileScreen } from "../views/admin/AdminProfileScreen";
 import { Products } from "../views/ProductsScreen";
 export const AdminConfig = () => {
@@ -19,7 +19,7 @@ export const AdminConfig = () => {
                 <Route
                     exact
                     path="/admin/user"
-                    component={Admin}
+                    component={AdminUsers}
                 />
                 <Route
                     exact

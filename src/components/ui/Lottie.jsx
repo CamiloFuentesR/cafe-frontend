@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import walkingTaco from "../json/walking-taco.json";
 import ufos from "../json/ufos.json";
 
-export const Admin = () => {
+export const Lot = () => {
 
     const lottieRef = useRef();
     const [over, setover] = useState(false)

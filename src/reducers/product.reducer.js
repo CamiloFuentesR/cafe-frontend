@@ -1,19 +1,18 @@
 import { types } from "../types/types";
 
 const initialState = {
-    menu: [],
+    products: []
 }
 
-export const menuReducer = (state = initialState, action) => {
+export const productReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case types.startGetbyCategory:
+        case types.startPrudctLoading:
             return {
                 ...state,
-                menu: [...action.payload]
+                products: [...action.payload]
             }
         default:
             return state;
     }
-
 }

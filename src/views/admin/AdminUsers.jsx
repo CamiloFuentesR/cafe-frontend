@@ -7,7 +7,7 @@ import nouser from '../../styles/img/nouser.png'
 import { startLoadingRoles } from '../../actions/role.action';
 import { SuccessMessage } from '../../components/ui/SuccessMessage';
 
-export const Admin = () => {
+export const AdminUsers = () => {
 
     const dispatch = useDispatch();
     const { users, totalUsers } = useSelector(state => state.user)
@@ -50,7 +50,6 @@ export const Admin = () => {
                                     <th className="">Inactivo/Activo</th>
                                 </tr>
                             </thead>
-
                             {displayUsers}
                         </table>
                     </div>

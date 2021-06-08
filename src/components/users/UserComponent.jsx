@@ -86,7 +86,7 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
                 <td className="col-6" >
                     {user.name}
                 </td>
-                <td className="col-3" id="role" role="button">
+                <td className="col-3" id="role" >
                     {/* {user.role} */}
                     <AsyncSelect
                         cacheOptions
@@ -97,6 +97,7 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
                         // getOptionLabel={({ role }) => role}
                         className='select'
                         onChange={handleRoleChange}
+                        
 
                     />
                 </td>
