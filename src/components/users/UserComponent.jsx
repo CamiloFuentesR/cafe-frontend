@@ -3,8 +3,31 @@ import { startDeleteUser, StartUpdateUser } from '../../actions/user.action'
 import AsyncSelect from 'react-select/async';
 import Swal from 'sweetalert2';
 import { startSuccessMessage } from '../../actions/ui.action';
+import { Avatar, makeStyles } from '@material-ui/core';
 
-export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => {
+export const UserComponent = ({ user, nouser }) => {
+
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            display: 'flex',
+            '& > *': {
+                margin: theme.spacing(1),
+            },
+        },
+        small: {
+            width: theme.spacing(3),
+            height: theme.spacing(3),
+        },
+        large: {
+            width: theme.spacing(7),
+            height: theme.spacing(7),
+        },
+    }));
+    const classes = useStyles();
+    <div className={classes.root}>
+    </div>
+
+
     const { roleOption } = useSelector(state => state.role);
     const dispatch = useDispatch()
     const filterColors = (inputValue) => {
@@ -61,15 +84,11 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
             })
         }
     }
-
     const handleRoleChange = (inputValue) => {
         dispatch(startSuccessMessage())
         user.role = inputValue.value;
         dispatch(StartUpdateUser(user.uid, user))
-        // dispatch(startLoadUsers(usersPerPages, pagesVisited))
     }
-
-
     const handleChecked = () => {
     }
     return (
@@ -79,9 +98,10 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
                 onClick={handleDelete}
             >
                 <td className="col-1">
-                    <div className="__user_img">
+                    {/* <div className="__user_img">
                         <img src={user.img !== undefined ? user.img : nouser} alt="imagen perfil" className="img" />
-                    </div>
+                    </div> */}
+                    <Avatar alt="Remy Sharp" src={user.img !== undefined ? user.img : nouser} />
                 </td>
                 <td className="col-6" >
                     {user.name}
@@ -97,8 +117,6 @@ export const UserComponent = ({ user, nouser, usersPerPages, pagesVisited }) => 
                         // getOptionLabel={({ role }) => role}
                         className='select'
                         onChange={handleRoleChange}
-                        
-
                     />
                 </td>
                 <td className="col-5 h-100">{/* {user.state ? 'activo' : 'inactivo'} */}

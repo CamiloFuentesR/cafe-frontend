@@ -13,8 +13,11 @@ export const AdminUsers = () => {
     const { users, totalUsers } = useSelector(state => state.user)
 
     const [pageNumber, setPageNumber] = useState(0);
+    //numero de filas por paginas
     const usersPerPages = 10;
+    //pagina en la que se encuentra
     const pagesVisited = pageNumber * usersPerPages;
+    //cantidad de paginas
     const pageCount = Math.ceil(totalUsers / usersPerPages);
 
     useEffect(() => {
@@ -29,8 +32,6 @@ export const AdminUsers = () => {
                 user={user}
                 nouser={nouser}
                 key={user.uid}
-                usersPerPages={usersPerPages}
-                pagesVisited={pagesVisited}
             />
         ));
     function handleChangePage({ selected }) {
@@ -69,7 +70,7 @@ export const AdminUsers = () => {
                     marginPagesDisplayed={2}
                 />
             </>
-            <SuccessMessage/>
+            <SuccessMessage />
         </div>
     )
 }

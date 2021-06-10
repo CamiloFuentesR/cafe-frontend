@@ -17,6 +17,22 @@ export const startLoadUsers = (total, from) => {
             .catch(e => console.log(e.response));
     }
 }
+export const startLoadSearchUsers = (value,total,from) => {
+    return async (dispatch) => {
+        await clienteAxios.get(`/search/users/${value}?limit=${total}&from=${from}`, {
+            headers: {
+                'Content-type': 'application/json',
+                'x-token': token(),
+            }
+        })
+            .then(({ data }) => {
+                console.log(data)
+                dispatch(loadUsers(data.users))
+                dispatch(totalUsers(data.total.length))
+            })
+            .catch(e => console.log(e.response));
+    }
+}
 
 export const startDeleteUser = (user) => {
     return async (dispatch) => {

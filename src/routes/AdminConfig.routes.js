@@ -5,7 +5,7 @@ import {
     Redirect,
 } from "react-router-dom";
 import {AdminUsers} from "../views/admin/AdminUsers"
-import { AdminProfileScreen } from "../views/admin/AdminProfileScreen";
+import { DataTableCrudDemo } from "../views/admin/AdminProfileScreen";
 import { Products } from "../views/ProductsScreen";
 export const AdminConfig = () => {
     return (
@@ -14,7 +14,7 @@ export const AdminConfig = () => {
                 <Route
                     exact
                     path="/admin/profile"
-                    component={AdminProfileScreen}
+                    component={DataTableCrudDemo}
                 />
                 <Route
                     exact

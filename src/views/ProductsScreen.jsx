@@ -1,22 +1,19 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { startPrudctLoading} from '../actions/product.action';
+import { startPrudctLoading } from '../actions/product.action';
 
 
 export const Products = () => {
 
     const dispatch = useDispatch()
-    const {products} = useSelector(state => state.product)
+    const { products } = useSelector(state => state.product)
     useEffect(() => {
         dispatch(startPrudctLoading())
     }, [dispatch])
-    console.log(products);
-
-
     return (
-        <div className="__prodcuts_screen">
-            <div className="container-fluid d-flex flex-column justify-content-center text-center ">
-                <h1 className="justify-align-center">Tabla Productos</h1>
+        <div className="__prodcuts_screen d-flex flex-column justify-content-center justify-items-center">
+            <div className="container-fluid product_table_container ">
+                <h1 className="justify-align-center text-center">Tabla Productos</h1>
                 <table className="table table-hover mt-5">
                     <thead>
                         <tr>
@@ -28,12 +25,12 @@ export const Products = () => {
                     </thead>
                     <tbody>
                         {products.map(producto => (
-                        <tr>
-                            <td>{producto.name}</td>
-                            <td>{producto.category.name}</td>
-                            <td>{producto.available ? 'disponible': 'no disponible'}</td>
-                            <td>{producto.price}</td>
-                        </tr>
+                            <tr key={producto.name}>
+                                <td>{producto.name}</td>
+                                <td>{producto.category.name}</td>
+                                <td>{producto.available ? 'disponible' : 'no disponible'}</td>
+                                <td>{producto.price}</td>
+                            </tr>
 
                         ))}
                     </tbody>
