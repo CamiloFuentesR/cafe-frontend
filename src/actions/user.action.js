@@ -26,9 +26,8 @@ export const startLoadSearchUsers = (value,total,from) => {
             }
         })
             .then(({ data }) => {
-                console.log(data)
                 dispatch(loadUsers(data.users))
-                dispatch(totalUsers(data.total.length))
+                dispatch(totalUsers(data.total))
             })
             .catch(e => console.log(e.response));
     }
