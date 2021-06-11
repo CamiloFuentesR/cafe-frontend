@@ -44,7 +44,7 @@ export const LoginScreen = () => {
                         <h1>Login</h1>
                     </div>
                     <form
-                        className="d-flex-column mt-5 flex-wrap "
+                        className="d-flex-column my-4 flex-wrap "
                         onSubmit={handleSubmit}
                     >
                         <div className="d-flex-column px-5 col-12">
