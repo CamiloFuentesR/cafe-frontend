@@ -3,13 +3,15 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+        flex-wrap: wrap;
         background: linear-gradient(
             rgba(145, 49, 49, 0.137),
             rgba(163, 92, 92, 0.103),
         ),url('../img/bar.jpg');
-        background-attachment: attachment;
+        background-attachment: fixed;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
+        background-position: relative;
     }
     
     .treeview{
@@ -17,7 +19,7 @@
     }
     .__home_header{
         width: 100%;
-        height: 40vh;
+        height: 35vh;
     }
     .__home_section1{
         background-color: rgb(255, 255, 255);
@@ -44,19 +46,20 @@
             margin-top: -60%;
             z-index: 100;
             opacity: .5;
+            font-size: 16px;
         }
     }
     .__home_menu{
         display: flex;
         justify-content: center;
         width: 100%;
-        background: linear-gradient(
-            rgba(145, 49, 49, 0.137),
-            rgba(163, 92, 92, 0.103),
-        ),url('../img/bar.jpg');
-        background-attachment: attachment;
-        background-repeat: no-repeat;
-        background-size: cover;
+        // background: linear-gradient(
+        //     rgba(145, 49, 49, 0.137),
+        //     rgba(163, 92, 92, 0.103),
+        // ),url('../img/bar.jpg');
+        // background-attachment: attachment;
+        // background-repeat: no-repeat;
+        // background-size: cover;
         // background-color: rgba(222, 228, 223, 0.945);
     }
     table{
@@ -136,7 +139,7 @@
         ),url('../img/bar.jpg');
         background-attachment: attachment;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
     }
     
     .treeview{
@@ -177,12 +180,12 @@
         display: flex;
         justify-content: center;
         width: 100%;
-        background: linear-gradient(
-            rgba(145, 49, 49, 0.137),
-            rgba(163, 92, 92, 0.103),
-        ),url('../img/bar.jpg');
-        background-attachment: attachment;
-        background-repeat: no-repeat;
+        // background: linear-gradient(
+        //     rgba(145, 49, 49, 0.137),
+        //     rgba(163, 92, 92, 0.103),
+        // ),url('../img/bar.jpg');
+        // background-attachment: attachment;
+        // background-repeat: no-repeat;
         background-size: cover;
         // background-color: rgba(222, 228, 223, 0.945);
     }

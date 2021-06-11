@@ -17,7 +17,7 @@ export const startLoadUsers = (total, from) => {
             .catch(e => console.log(e.response));
     }
 }
-export const startLoadSearchUsers = (value,total,from) => {
+export const startLoadSearchUsers = (value, total, from) => {
     return async (dispatch) => {
         await clienteAxios.get(`/search/users/${value}?limit=${total}&from=${from}`, {
             headers: {
