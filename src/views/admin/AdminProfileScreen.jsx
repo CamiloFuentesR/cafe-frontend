@@ -12,7 +12,7 @@ import { Button } from 'primereact/button';
 import { Toolbar } from 'primereact/toolbar';
 
 import { InputText } from 'primereact/inputtext';
-import { startPrudctLoading } from '../../actions/product.action';
+// import { startPrudctLoading } from '../../actions/product.action';
 import { useDispatch, useSelector } from 'react-redux';
 import { startLoadUsers, startLoadSearchUsers } from '../../actions/user.action';
 import { Paginator } from 'primereact/components/paginator/Paginator';
