@@ -5,13 +5,13 @@
         justify-items: center;
         align-items: center;
         width: 100%;
-        height: 100vh;
+        min-height: 92vh;
         position: relative;
         background-color: rgb(255, 255, 255);
     }    
     ._login_card{
         width: 95%;
-        height: 90vh;
+        min-height: 70vh;
         margin-top: 30px;
         border: 1px solid;
         border-radius: 10px;
@@ -25,7 +25,7 @@
     }
     ._register_card{
         width: 95%;
-        height: 90vh;
+        min-height: 70vh;
         margin-top: 30px;
         border: 1px solid;
         border-radius: 10px;
@@ -49,7 +49,7 @@
         flex-wrap: wrap;
         flex-direction: column;
         width: 100%;
-        height: 35%;
+        min-height: 30vh;
         h1{
             font-family: 'Roboto', sans-serif;
             font-weight: bolder 700;
@@ -127,7 +127,7 @@
         align-items: center;
         display: flex;
         justify-content: center;
-        height: 100vh;
+        height: 92vh;
         position: relative;
         width: 100%;
         background-color: rgb(255, 255, 255);
@@ -135,8 +135,8 @@
     }    
     ._login_card{
         position: absolute;
-        width: 70%;
-        height: 90vh;
+        width: 80%;
+        min-height: 50vh;
         border: 1px solid;
         border-radius: 10px;
         h1{
@@ -144,8 +144,8 @@
         }
     }
     ._register_card{
-        width: 70%;
-        height: 90vh;
+        width: 80%;
+        min-height: 50vh;
         border: 1px solid;
         border-radius: 10px;
         h1{
@@ -168,7 +168,7 @@
         flex-wrap: wrap;
         flex-direction: column;
         width: 100%;
-        height: 45%;
+        min-height: 30vh;
         h1{
             font-family: 'Roboto', sans-serif;
             font-weight: bolder 700;
@@ -177,7 +177,6 @@
         }
     }
     ._login_form{
-        height: 55%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -192,6 +191,7 @@
         border: 0px;
         border-bottom: 1px solid;
         opacity: .8;
+        margin: 5px 0;
         &:focus{
             outline: none;
             border-bottom: 1px solid rgb(114, 68, 9);
