@@ -46,7 +46,7 @@ export const RegisterScreen = () => {
                             value={name}
                             onChange={handleChange}
                         />
-                        {errores.name && <p style={{ color: 'red', fontSize: '14px' }}>{errores.name}</p>}
+                        {errores.name && <p style={{ color: 'red', fontSize: '14px', marginLeft: '30px',marginBottom: '20px' }}>{errores.name}</p>}
                     </div>
                     <div className="_Login_div">
                         {/* <label htmlFor="Email">Email</label> */}
@@ -59,7 +59,7 @@ export const RegisterScreen = () => {
                             value={email}
                             onChange={handleChange}
                         />
-                        {errores.email && <p style={{ color: 'red', fontSize: '14px' }}>{errores.email}</p>}
+                        {errores.email && <p style={{ color: 'red', fontSize: '14px', marginLeft: '30px',marginBottom: '20px' }}>{errores.email}</p>}
                     </div>
                     <div className="_login_div">
                         {/* <label htmlFor="password">Password</label> */}
@@ -72,7 +72,7 @@ export const RegisterScreen = () => {
                             value={password}
                             onChange={handleChange}
                         />
-                        {errores.password && <p style={{ color: 'red', fontSize: '14px' }}>{errores.password}</p>}
+                        {errores.password && <p style={{ color: 'red', fontSize: '14px', marginLeft: '30px',marginBottom: '20px' }}>{errores.password}</p>}
                     </div>
                     <div className="_login_div">
                         {/* <label htmlFor="password">Password</label> */}
@@ -85,7 +85,7 @@ export const RegisterScreen = () => {
                             value={password2}
                             onChange={handleChange}
                         />
-                        {errores.password2 && <p style={{ color: 'red', fontSize: '14px' }}>{errores.password2}</p>}
+                        {errores.password2 && <p style={{ color: 'red', fontSize: '14px', marginLeft: '30px',marginBottom: '20px' }}>{errores.password2}</p>}
                     </div>
                     <div className="_login_button">
                         <button>Ingresar</button>
