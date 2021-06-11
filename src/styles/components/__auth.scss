@@ -15,7 +15,7 @@
     }    
     ._login_card{
         width: 95%;
-        min-height: 70vh;
+        min-height: 60vh;
         margin-top: 30px;
         border: 1px solid;
         border-radius: 10px;
@@ -29,7 +29,7 @@
     }
     ._register_card{
         width: 95%;
-        min-height: 70vh;
+        min-height: 60vh;
         margin-top: 30px;
         border: 1px solid;
         border-radius: 10px;
@@ -110,6 +110,7 @@
         }
     }
     ._login_register{
+        margin: 10px 0;
         a{
             text-decoration: none;
             color: black;

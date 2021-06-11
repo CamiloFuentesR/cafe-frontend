@@ -86,7 +86,7 @@ export const LoginScreen = () => {
                             />
                             <button type="submit">Ingresar</button>
                         </div>
-                        <div className="_login_register mt-2 text-center">
+                        <div className="_login_register mt-4 text-center">
                             <p>No estas registrado? <Link to="/auth/register">Registrate aqui</Link></p>
                         </div>
                     </form>
