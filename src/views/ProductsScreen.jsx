@@ -27,7 +27,7 @@ export const Products = () => {
     const { products, totalProducts } = useSelector(state => state.product)
     //muestra los proructos como array de objetos
     const [selectedProducts, setSelectedProducts] = useState(null);
-    const [product, setProduct] = useState('');
+    // const [product, setProduct] = useState('');
     const [productDialog, setProductDialog] = useState(false);
     const [globalFilter, setGlobalFilter] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
@@ -184,7 +184,7 @@ export const Products = () => {
         );
     }
     const editProduct = (product) => {
-        setProduct({ ...product });
+        // setProduct({ ...product });
         setProductDialog(true);
     }
     const hideDialog = () => {
