@@ -1,7 +1,8 @@
 import { types } from "../types/types";
 
 const initialState = {
-    products: []
+    products: [],
+    totalProducts: 0
 }
 
 export const productReducer = (state = initialState, action) => {
@@ -11,6 +12,11 @@ export const productReducer = (state = initialState, action) => {
             return {
                 ...state,
                 products: [...action.payload]
+            }
+        case types.startTotalProducts:
+            return {
+                ...state,
+                totalProducts:action.payload
             }
         default:
             return state;

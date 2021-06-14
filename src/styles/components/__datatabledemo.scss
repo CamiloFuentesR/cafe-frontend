@@ -1,10 +1,19 @@
+.p-datatable-wrapper{
+    // min-width: 500px;
+    overflow-x: scroll;
+}
 
 .datatable-crud-demo .table-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
+.p-datatable-thead th span{
+    color: white !important;
+}
+.p-highlight{
+    box-shadow: none !important;
+}
 .datatable-crud-demo .product-image {
     width: 100px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);

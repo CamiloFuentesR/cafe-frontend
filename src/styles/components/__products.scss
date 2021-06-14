@@ -1,7 +1,8 @@
-.__prodcuts_screen{
-    height: 92.6vh;
-    width: 100%;
+.__products_screen{
+    height: 92.7vh;
+    max-width: 100%;
     background-color: white;
+    overflow: auto;
 }
 
 .product_table_container{

@@ -25,7 +25,6 @@ export const DataTableCrudDemo = () => {
     const dispatch = useDispatch();
     const { products } = useSelector(state => state.product)
     const { users, totalUsers } = useSelector(state => state.user)
-    console.log(users);
 
     //muestra los proructos como array de objetos
     const [selectedProducts, setSelectedProducts] = useState(null);
@@ -178,12 +177,15 @@ export const DataTableCrudDemo = () => {
                             selection={selectedProducts}
                             dataKey="name"
                             globalFilter={globalFilter}
-                            header={header}>
+                            header={header}
+                            className="table"
+                            >
+                            
                             <Column selectionMode="multiple" headerStyle={{ width: '3rem' }} />
                             <Column field="name" header="Name" sortable />
                             {/* <Column field="price" header="Price" body={priceBodyTemplate} sortable></Column> */}
                             <Column field="role" header="Role" sortable />
-                            <Column field="email" header="Email" sortable />
+                            <Column field="email" header="Email" sortable className="p-text-right" />
                             {/* <Column field="rating" header="Reviews" body={ratingBodyTemplate} sortable></Column> */}
                             <Column field="estado" header="Estado" body={statusBodyTemplate} sortable />
                         </DataTable>

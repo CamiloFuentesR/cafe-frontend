@@ -12,6 +12,7 @@ export const types = {
     startUpdateUser: '[User] Update User',
 
     startPrudctLoading: '[Product] Load Product',
+    startTotalProducts: '[Product] Total Product',
 
 
     startGetbyCategory: '[Category] Menu by category',

@@ -39,9 +39,14 @@ export const UserComponent = ({ user, nouser }) => {
         new Promise(resolve => {
             resolve(filterColors(inputValue));
         });
-    const handleDelete = ({ target }) => {
-        if ((target.type === 'checkbox' && user.state === true)) {
-            console.log(user.state);
+
+    const handleRoleChange = (inputValue) => {
+        dispatch(startSuccessMessage())
+        user.role = inputValue.value;
+        dispatch(StartUpdateUser(user.uid, user))
+    }
+    const handleDelete = (e) => {
+        if (user.state === true) {
             Swal.fire({
                 title: '¿Estas seguro que deseas eliminar este usuario?',
                 text: "¡Este usuario no  tendrá acceso al sistema!",
@@ -62,7 +67,7 @@ export const UserComponent = ({ user, nouser }) => {
                 }
             })
         }
-        else if ((target.type === 'checkbox' && user.state === false)) {
+        else if (user.state === false) {
             Swal.fire({
                 title: '¿Desea activar este usuario?',
                 text: "¡Este usuario tendrá acceso al sistema!",
@@ -84,19 +89,9 @@ export const UserComponent = ({ user, nouser }) => {
             })
         }
     }
-    const handleRoleChange = (inputValue) => {
-        dispatch(startSuccessMessage())
-        user.role = inputValue.value;
-        dispatch(StartUpdateUser(user.uid, user))
-    }
-    const handleChecked = () => {
-    }
     return (
         <tbody>
-            <tr
-                className="text-center align-middle"
-                onClick={handleDelete}
-            >
+            <tr className="text-center align-middle">
                 <td className="col-1">
                     {/* <div className="__user_img">
                         <img src={user.img !== undefined ? user.img : nouser} alt="imagen perfil" className="img" />
@@ -121,7 +116,7 @@ export const UserComponent = ({ user, nouser }) => {
                 </td>
                 <td className="col-5 h-100">{/* {user.state ? 'activo' : 'inactivo'} */}
                     <div className="form-switch  d-flex-column   flex-wrap justify-content-center">
-                        <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked={user.state} onChange={handleChecked} />
+                        <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked={user.state} onChange={handleDelete} />
                         {/* <label className="form-check-label" htmlFor="flexSwitchCheckChecked">{ user.state? 'activo' : 'inactivo'}</label> */}
                     </div>
                 </td>
