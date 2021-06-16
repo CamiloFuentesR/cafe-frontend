@@ -36,7 +36,7 @@ export const ProductTable = ({ totalProducts, products }) => {
     const dt = useRef(null);
     const dispatch = useDispatch()
 
-    const { formValues, errores, handleSubmit, handleChange, setFormValues } = useValidation(initialForm, productValidate, handleSubmitProduct)
+    const { formValues, /* errores, handleSubmit, */ handleChange, setFormValues } = useValidation(initialForm, productValidate, handleSubmitProduct)
     function handleSubmitProduct(e) {
         e.preventDEfault()
         console.log(e);
