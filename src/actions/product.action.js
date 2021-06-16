@@ -24,7 +24,7 @@ export const startSearchPrudctLoading = (value,total,from) => {
 }
 export const startPrudctUpdate = (id,data) => {
     return async (dispatch) => {
-        await clienteAxios.put(`http://localhost:4000/api/products/${id}`,data,{
+        await clienteAxios.put(`/products/${id}`,data,{
             headers: {
                 'Content-type': 'application/json',
                 'x-token': token()
