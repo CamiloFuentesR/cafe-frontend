@@ -1,7 +1,7 @@
 import  { useEffect, useState } from 'react'
 
 const useValidation = (stateInicial, validar, fn) => {
-    const [valores, setValores] = useState(stateInicial);
+    const [formValues, setFormValues] = useState(stateInicial);
     const [errores, setErrores] = useState({});
     const [submitForm, setSubmitForm] = useState(false);
     const [loading, setLoading] = useState(false)
@@ -23,35 +23,29 @@ const useValidation = (stateInicial, validar, fn) => {
 
     //Funcion que se ejecuta conforme el usuario escribe algo
     const handleChange = (e) => {
-        setValores({
-            ...valores,
+        setFormValues({
+            ...formValues,
             [e.target.name]: e.target.value
         });
       
     }
 
-    //cambios en tiempo real
-    const handleBlur = (e) => {
-        const erroresValidacion = validar(valores);
-        setErrores(erroresValidacion);
-    }
-
     //Funcion que se ejecuta cuando el usuario ejecuta el submit
     const handleSubmit = e => {
         e.preventDefault();
-        const erroresValidacion = validar(valores);
+        const erroresValidacion = validar(formValues);
         setErrores(erroresValidacion);
         setSubmitForm(true);
     }
 
     return {
-        valores,
+        formValues,
         errores,
         handleSubmit,
         handleChange,
-        handleBlur,
         setLoading,
-        loading
+        loading,
+        setFormValues
     }
 }
 

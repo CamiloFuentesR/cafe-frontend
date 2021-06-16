@@ -18,10 +18,8 @@ import { startLoadUsers, startLoadSearchUsers } from '../../actions/user.action'
 import { Paginator } from 'primereact/components/paginator/Paginator';
 import { Dropdown } from 'primereact/dropdown';
 import { Ripple } from 'primereact/ripple';
-import PrimeReact, { locale } from 'primereact/api';
-locale('ES');
+
 export const DataTableCrudDemo = () => {
-    PrimeReact.ripple = true;
     const dispatch = useDispatch();
     const { products } = useSelector(state => state.product)
     const { users, totalUsers } = useSelector(state => state.user)

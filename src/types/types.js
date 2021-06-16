@@ -13,6 +13,9 @@ export const types = {
 
     startPrudctLoading: '[Product] Load Product',
     startTotalProducts: '[Product] Total Product',
+    startUpdateProduct: '[Product] Update Product',
+
+    startCategoryLoad: '[Category] Load Category',
 
 
     startGetbyCategory: '[Category] Menu by category',

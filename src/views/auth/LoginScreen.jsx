@@ -6,6 +6,8 @@ import { startLogin, startLoginGoogle } from '../../actions/auth.action'
 import useValidation from '../../hooks/useValidation'
 import { Load } from '../../components/ui/Load'
 import GoogleLogin from 'react-google-login'
+import { Password } from 'primereact/password';
+
 
 const initialValue = {
     email: 'user1@email.com',
@@ -16,14 +18,14 @@ export const LoginScreen = () => {
     const { isLoading } = useSelector(state => state.ui)
     // const[formValues,handleInputChange] = useForm(initialValue);
     // const {email,password} = formValues;
-    const { valores, errores, handleSubmit, handleChange } = useValidation(initialValue, loginvalidate, handleSubmitLogin)
+    const { formValues, errores, handleSubmit, handleChange } = useValidation(initialValue, loginvalidate, handleSubmitLogin)
 
-    const { email, password } = valores;
+    const { email, password } = formValues;
     const dispatch = useDispatch();
 
     function handleSubmitLogin(e) {
         // e.preventDefault();
-        dispatch(startLogin(valores));
+        dispatch(startLogin(formValues));
     }
 
     // login google
@@ -58,22 +60,23 @@ export const LoginScreen = () => {
                                 value={email}
                                 onChange={handleChange}
                             />
-                            {errores.email && <p style={{ color: 'red', fontSize: '14px', marginLeft: '30px', marginBottom: '18px' }}>{errores.email}</p>}
+                            {errores.email && <p style={{ color: 'red', fontSize: '14px', marginBottom: '18px' }}>{errores.email}</p>}
                         </div>
-                        <div className="d-flex-column  px-5 mb-4 mt-0 col-12">
+                        <div className="d-flex-column  px-5 mb-4 mt-0 col-12 _login_div">
                             {/* <label htmlFor="password">Password</label> */}
-                            <input
+                            <Password
                                 autoComplete="off"
                                 type="password"
                                 name="password"
-                                className={`form-control _login_input ${errores.password && 'is-invalid'}`}
+                                className={`form-control a ${errores.password && 'is-invalid'}`}
                                 placeholder="Password"
                                 value={password}
                                 onChange={handleChange}
+                                toggleMask={errores.password ? false : true}
                             />
                             {
                                 errores.password &&
-                                <p style={{ color: 'red', fontSize: '14px', marginLeft: '30px', marginBottom: '28px' }}>{errores.password}</p>
+                                <p style={{ color: 'red', fontSize: '14px', marginBottom: '28px' }}>{errores.password}</p>
                             }
                         </div>
                         <div className="_login_button mx-3">

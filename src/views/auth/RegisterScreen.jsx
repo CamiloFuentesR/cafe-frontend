@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { startRegisgter } from '../../actions/auth.action'
 import useValidation from '../../hooks/useValidation'
 import  { registerValidate } from '../../validation/formValidate'
+import { Password } from 'primereact/password';
+import { Divider } from 'primereact/divider';
 
 const initialValue = {
     name: '',
@@ -17,14 +19,24 @@ export const RegisterScreen = () => {
     // const [formValues,handleInputChange] = useForm(initialValue)
     // const {name,email,password,password2} = formValues;
 
-    const { valores, errores, handleSubmit, handleChange } = useValidation(initialValue, registerValidate, handleSubmitRegister)
-    const { name, email, password, password2 } = valores;
+    const { formValues, errores, handleSubmit, handleChange } = useValidation(initialValue, registerValidate, handleSubmitRegister)
+    const { name, email, password, password2 } = formValues;
     const dispatch = useDispatch();
 
     function handleSubmitRegister() {
-        dispatch(startRegisgter(valores))
+        dispatch(startRegisgter(formValues))
     }
-
+    const footer = (
+        <>
+            <Divider />
+            <p className="p-mt-2">La contraseña debe</p>
+            <ul className="p-pl-2 p-ml-2 p-mt-0" style={{lineHeight: '1.5'}}>
+                <li>Tener al menos 1 mayúscula</li>
+                <li>Tener al menos 6 caractéres</li>
+                <li>Contener al menos 1 numero</li>
+            </ul>
+        </>
+    );
     return (
         <div className="__login">
             <div className="_register_card">
@@ -46,7 +58,7 @@ export const RegisterScreen = () => {
                             value={name}
                             onChange={handleChange}
                         />
-                        {errores.name && <p style={{ color: 'red', fontSize: '14px', marginLeft: '30px',marginBottom: '20px' }}>{errores.name}</p>}
+                        {errores.name && <p style={{ color: 'red', fontSize: '14px', marginLeft: '30px' }}>{errores.name}</p>}
                     </div>
                     <div className="_Login_div">
                         {/* <label htmlFor="Email">Email</label> */}
@@ -59,31 +71,34 @@ export const RegisterScreen = () => {
                             value={email}
                             onChange={handleChange}
                         />
-                        {errores.email && <p style={{ color: 'red', fontSize: '14px', marginLeft: '30px',marginBottom: '20px' }}>{errores.email}</p>}
+                        {errores.email && <p style={{ color: 'red', fontSize: '14px', marginLeft: '30px'}}>{errores.email}</p>}
                     </div>
                     <div className="_login_div">
                         {/* <label htmlFor="password">Password</label> */}
-                        <input
+                        <Password
                             autoComplete="off"
                             type="password"
                             name="password"
-                            className={`_login_input form-control ${errores.password && 'is-invalid'}`}
+                            className={` form-control a ${errores.password && 'is-invalid'} mt-2 mb-2`}
                             placeholder="Password"
                             value={password}
                             onChange={handleChange}
+                            footer={footer}
+                            toggleMask={errores.password ? false : true}
                         />
-                        {errores.password && <p style={{ color: 'red', fontSize: '14px', marginLeft: '30px',marginBottom: '20px' }}>{errores.password}</p>}
+                        {errores.password && <p style={{ color: 'red', fontSize: '14px' }}>{errores.password}</p>}
                     </div>
                     <div className="_login_div">
                         {/* <label htmlFor="password">Password</label> */}
-                        <input
+                        <Password
                             autoComplete="off"
                             type="password"
                             name="password2"
-                            className={`_login_input form-control ${errores.password2 && 'is-invalid'}`}
+                            className={` form-control a ${errores.password2 && 'is-invalid'} mt-2`}
                             placeholder="Confirmar Password"
                             value={password2}
                             onChange={handleChange}
+                            toggleMask={errores.password ? false : true}
                         />
                         {errores.password2 && <p style={{ color: 'red', fontSize: '14px', marginLeft: '30px',marginBottom: '20px' }}>{errores.password2}</p>}
                     </div>

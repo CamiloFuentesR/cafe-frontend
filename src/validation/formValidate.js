@@ -64,3 +64,17 @@ export const registerValidate = (valores) => {
     }
     return errores;
 }
+export const productValidate = (valores) => {
+    let errores = {};
+
+    if(!valores.name){
+        errores.name = 'El nombre es oblgatorio'
+    }
+    if(!valores.price){
+        errores.name = 'El precio es oblgatorio'
+    }
+    if(valores.available.trim() === ''){
+        errores.name = 'El stock es oblgatorio'
+    }
+    return errores;
+}

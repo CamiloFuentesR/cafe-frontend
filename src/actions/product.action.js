@@ -1,4 +1,4 @@
-import { clienteAxios } from "../config/axios"
+import { clienteAxios, token } from "../config/axios"
 import { types } from "../types/types";
 
 
@@ -22,6 +22,21 @@ export const startSearchPrudctLoading = (value,total,from) => {
             .catch(e => console.log(e))
     }
 }
+export const startPrudctUpdate = (id,data) => {
+    return async (dispatch) => {
+        await clienteAxios.put(`http://localhost:4000/api/products/${id}`,data,{
+            headers: {
+                'Content-type': 'application/json',
+                'x-token': token()
+            }
+        })
+            .then(({ data }) => {
+                // console.log(data.updatedProduct)
+                dispatch(productUpdate(data.updatedProduct))
+            })
+            .catch(e => console.log(e))
+    }
+}
 
 const productLoad = (data) => ({
     type: types.startPrudctLoading,
@@ -31,5 +46,10 @@ const productLoad = (data) => ({
 
 const totalProducts = (data) =>({
     type: types.startTotalProducts,
+    payload: data
+})
+
+const productUpdate = (data) =>({
+    type: types.startUpdateProduct,
     payload: data
 })
