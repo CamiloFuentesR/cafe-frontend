@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Dialog } from 'primereact/dialog';
 import useValidation from '../../hooks/useValidation';
 import { productValidate } from '../../validation/formValidate';
 import { Button } from 'primereact/button';
 import AsyncSelect from 'react-select/async';
 import { useDispatch, useSelector } from 'react-redux';
-import { startPrudctLoading, startPrudctUpdate } from '../../actions/product.action';
+import { startPrudctUpdate } from '../../actions/product.action';
 
 const initialForm = {
     name: '',
@@ -14,7 +14,7 @@ const initialForm = {
     price: 0,
     user: '',
 }
-export const ProductModalSave = ({ formValues, setFormValues, productDialog, setProductDialog, handleChange, customFirst1, customRows1 }) => {
+export const ProductModalSave = ({ formValues, productDialog, setProductDialog, handleChange }) => {
 
     const dispatch = useDispatch()
     const { categoryOption } = useSelector(state => state.category)
@@ -37,25 +37,23 @@ export const ProductModalSave = ({ formValues, setFormValues, productDialog, set
         });
 
     const saveProduct = () => {
-        if (!categorySelected.label) {
-            formValues.category = formValues.category._id;
-            dispatch(startPrudctUpdate(formValues.pid, formValues))
+        if (!categorySelected.label && category._id) {
+            formValues.category = category._id;
+            dispatch(startPrudctUpdate(formValues?.pid, formValues))
             // setFormValues(initialForm);
             setProductDialog(false);
             return;
-        } else {
+        } else if (formValues?.pid) {
             formValues.category = categorySelected._id;
-            dispatch(startPrudctUpdate(formValues.pid, formValues))
+            dispatch(startPrudctUpdate(formValues?.pid, formValues))
             // setFormValues(initialForm);
             setProductDialog(false);
             setcategorySelected({})
         }
 
     }
-    console.log(categorySelected);
     const hideDialog = () => {
         //hacer el submit edit
-
         setProductDialog(false);
     }
 
@@ -69,20 +67,7 @@ export const ProductModalSave = ({ formValues, setFormValues, productDialog, set
             <Button label="Save" icon="pi pi-check" className="p-button-text" onClick={saveProduct} onSubmit={handleSubmit} />
         </>
     );
-    const customStyles = {
-        menu: (provided, state) => ({
-            ...provided,
-            //   width: state.selectProps.width,
-            //   borderBottom: '1px dotted pink',
-            //   color: state.selectProps.menuColor,
-            padding: 20,
-            overflow: 'auto',
-        }),
-    }
-    useEffect(() => {
-        dispatch(startPrudctLoading(customRows1, customFirst1))
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [dispatch])
+
     return (
         <div>
             <Dialog
@@ -108,14 +93,12 @@ export const ProductModalSave = ({ formValues, setFormValues, productDialog, set
                     <label htmlFor="category" >categoria</label>
                     <AsyncSelect
                         cacheOptions
-                        defaultInputValue={category.name}
-                        defaultValue={{ label: category.name, value: category.name }}
+                        defaultInputValue={category?.name}
+                        defaultValue={{ label: category?.name, value: category?.name }}
                         defaultOptions={categoryOption}
                         loadOptions={promiseOptions}
                         onChange={handleChangeSelect}
                         className='select'
-                        styles={customStyles}
-                        scroll
                     />
                     <label htmlFor="">Stock</label>
                     <input

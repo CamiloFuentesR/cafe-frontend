@@ -19,7 +19,6 @@ export const productReducer = (state = initialState, action) => {
                 totalProducts: action.payload
             }
         case types.startUpdateProduct:
-            console.log(state.products)
             return {
                 ...state,
                 products: state.products.map(e => (e.pid === action.payload.pid) ? action.payload : e)

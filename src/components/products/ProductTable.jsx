@@ -14,7 +14,7 @@ import { productValidate } from '../../validation/formValidate';
 import useValidation from '../../hooks/useValidation';
 import { startPrudctLoading, startSearchPrudctLoading } from '../../actions/product.action';
 import { ProductModalSave } from './ProductModalSave';
-import { startCategoryLoad } from '../../actions/category.action';
+import { startCategoryLoad, startSearchCategoryLoading } from '../../actions/category.action';
 
 const initialForm = {
     name: '',
@@ -29,6 +29,7 @@ export const ProductTable = ({ totalProducts, products }) => {
     const [selectedProducts, setSelectedProducts] = useState(null);
     const [productDialog, setProductDialog] = useState(false);
     const [globalFilter, setGlobalFilter] = useState(null);
+    const [cateogriaValue, setcateogriaValue] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [pageInputTooltip, setPageInputTooltip] = useState('Presiona la tecla \'Enter\' para ir a esta pag.');
     const [customFirst1, setCustomFirst1] = useState(0);
@@ -48,7 +49,10 @@ export const ProductTable = ({ totalProducts, products }) => {
         if (globalFilter) {
             dispatch(startSearchPrudctLoading(globalFilter, customRows1, customFirst1))
         }
-    }, [dispatch, customFirst1, customRows1, globalFilter]);
+        if (cateogriaValue) {
+            dispatch(startSearchCategoryLoading(cateogriaValue, customRows1, customFirst1))
+        }
+    }, [dispatch, customFirst1, customRows1, globalFilter,cateogriaValue]);
 
 
     const onPageInputChange = (event) => {
@@ -83,7 +87,7 @@ export const ProductTable = ({ totalProducts, products }) => {
 
                 <span className="p-input-icon-left">
                     <i className="pi pi-search" />
-                    <InputText /* value={} */ /* onChange={(e) => setValue3(e.target.value)} */ placeholder="Search" />
+                    <InputText /* value={} */  onChange={(e) => setcateogriaValue(e.target.value)}  placeholder="Search" />
                 </span>
 
             </div>
@@ -201,8 +205,7 @@ export const ProductTable = ({ totalProducts, products }) => {
                 dataKey="name"
                 globalFilter={globalFilter}
                 header={header}
-                className="table"
-            >
+                className="table">
                 <Column selectionMode="multiple" headerStyle={{ width: '3rem' }} />
                 <Column field="name" header="Name" sortable style={{ width: '150px' }} />
                 <Column field="category.name" header="Categoria" body={categoryBodyTemplate} style={{ width: '150px' }} sortable />
@@ -210,16 +213,19 @@ export const ProductTable = ({ totalProducts, products }) => {
                 <Column field="price" header="Price" body={priceBodyTemplate} style={{ width: '75px' }} sortable />
                 <Column header="Acciones" body={actionBodyTemplate} style={{ width: '120px' }} />
             </DataTable>
-            <Paginator template={template1} first={customFirst1} rows={customRows1} totalRecords={totalProducts} onPageChange={onCustomPageChange1} />
+            <Paginator
+                template={template1}
+                first={customFirst1}
+                rows={customRows1}
+                totalRecords={totalProducts}
+                onPageChange={onCustomPageChange1}
+            />
 
             <ProductModalSave
                 formValues={formValues}
                 productDialog={productDialog}
                 setProductDialog={setProductDialog}
                 handleChange={handleChange}
-                setFormValues={setFormValues}
-                customRows1={customRows1}
-                customFirst1={customFirst1}
             />
         </>
     )

@@ -22,7 +22,7 @@ export const Products = () => {
     const exportCSV = () => {
         dt.current.exportCSV();
     }
-    
+
     const rightToolbarTemplate = () => {
         return (
             <>
