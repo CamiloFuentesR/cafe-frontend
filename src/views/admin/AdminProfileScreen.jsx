@@ -177,8 +177,8 @@ export const DataTableCrudDemo = () => {
                             globalFilter={globalFilter}
                             header={header}
                             className="table"
-                            >
-                            
+                        >
+
                             <Column selectionMode="multiple" headerStyle={{ width: '3rem' }} />
                             <Column field="name" header="Name" sortable />
                             {/* <Column field="price" header="Price" body={priceBodyTemplate} sortable></Column> */}

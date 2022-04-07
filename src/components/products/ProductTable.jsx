@@ -12,9 +12,9 @@ import { Ripple } from 'primereact/ripple';
 
 import { productValidate } from '../../validation/formValidate';
 import useValidation from '../../hooks/useValidation';
-import { startPrudctLoading, startSearchPrudctLoading } from '../../actions/product.action';
+import { startPrudctLoading, startSearchProductByCategoryLoading, startSearchPrudctLoading } from '../../actions/product.action';
 import { ProductModalSave } from './ProductModalSave';
-import { startCategoryLoad, startSearchCategoryLoading } from '../../actions/category.action';
+import { startCategoryLoad } from '../../actions/category.action';
 
 const initialForm = {
     name: '',
@@ -29,7 +29,7 @@ export const ProductTable = ({ totalProducts, products }) => {
     const [selectedProducts, setSelectedProducts] = useState(null);
     const [productDialog, setProductDialog] = useState(false);
     const [globalFilter, setGlobalFilter] = useState(null);
-    const [cateogriaValue, setcateogriaValue] = useState(null);
+    const [categoryValue, setcategoryaValue] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [pageInputTooltip, setPageInputTooltip] = useState('Presiona la tecla \'Enter\' para ir a esta pag.');
     const [customFirst1, setCustomFirst1] = useState(0);
@@ -49,10 +49,10 @@ export const ProductTable = ({ totalProducts, products }) => {
         if (globalFilter) {
             dispatch(startSearchPrudctLoading(globalFilter, customRows1, customFirst1))
         }
-        if (cateogriaValue) {
-            dispatch(startSearchCategoryLoading(cateogriaValue, customRows1, customFirst1))
+        if(categoryValue) {
+            dispatch(startSearchProductByCategoryLoading(categoryValue, customRows1, customFirst1))
         }
-    }, [dispatch, customFirst1, customRows1, globalFilter,cateogriaValue]);
+    }, [dispatch, customFirst1, customRows1, globalFilter, categoryValue]);
 
 
     const onPageInputChange = (event) => {
@@ -87,7 +87,10 @@ export const ProductTable = ({ totalProducts, products }) => {
 
                 <span className="p-input-icon-left">
                     <i className="pi pi-search" />
-                    <InputText /* value={} */  onChange={(e) => setcateogriaValue(e.target.value)}  placeholder="Search" />
+                    <InputText /* value={} */
+                        type="search"
+                        onChange={(e) => setcategoryaValue(e.target.value)} 
+                        placeholder="Buscar..." />
                 </span>
 
             </div>
