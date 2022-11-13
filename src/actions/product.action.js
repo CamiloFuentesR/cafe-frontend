@@ -15,6 +15,8 @@ export const startSearchPrudctLoading = (value, total, from) => {
     return async (dispatch) => {
         await clienteAxios.get(`/search/products/${value}?limit=${total}&from=${from}`)
             .then(({ data }) => {
+                console.log('search product');
+                console.log(data);
                 dispatch(productLoad(data.product))
                 dispatch(totalProducts(data.total))
             })
@@ -25,6 +27,8 @@ export const startSearchProductByCategoryLoading = (value, total, from) => {
     return async (dispatch) => {
         await clienteAxios.get(`/search/productsByCategory/${value}?limit=${total}&from=${from}`)
             .then(({ data }) => {
+                console.log('search by category');
+                console.log(data.results);
                 dispatch(productLoad(data.results.products))
                 dispatch(totalProducts(data.results.total))
             })

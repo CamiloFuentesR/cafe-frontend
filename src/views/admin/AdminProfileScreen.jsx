@@ -21,9 +21,8 @@ import { Ripple } from 'primereact/ripple';
 
 export const DataTableCrudDemo = () => {
     const dispatch = useDispatch();
-    const { products } = useSelector(state => state.product)
+    // const { products } = useSelector(state => state.product)
     const { users, totalUsers } = useSelector(state => state.user)
-
     //muestra los proructos como array de objetos
     const [selectedProducts, setSelectedProducts] = useState(null);
     const [globalFilter, setGlobalFilter] = useState(null);
@@ -166,7 +165,8 @@ export const DataTableCrudDemo = () => {
             <div className="card">
                 <Toolbar className="p-mb-4" right={rightToolbarTemplate}></Toolbar>
                 {
-                    products &&
+                    // products &&
+                    users &&
                     <>
                         <DataTable
                             ref={dt}

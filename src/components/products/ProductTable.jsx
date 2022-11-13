@@ -28,8 +28,8 @@ const initialForm = {
 export const ProductTable = () => {
 
     const { products, totalProducts } = useSelector(state => state.product)
-    const refGlobal = useRef()
-    const refCategory = useRef()
+    const refGlobal = useRef(null)
+    const refCategory = useRef(null)
     const [selectedProducts, setSelectedProducts] = useState(null);
     const [productDialog, setProductDialog] = useState(false);
     const [globalFilter, setGlobalFilter] = useState(null);
@@ -44,22 +44,21 @@ export const ProductTable = () => {
     const { formValues, /* errores, handleSubmit, */ handleChange, setFormValues } = useValidation(initialForm, productValidate, handleSubmitProduct)
     function handleSubmitProduct(e) {
         e.preventDEfault()
-        console.log(e);
     }
     refGlobal.current = globalFilter;
     refCategory.current = categoryValue
     useEffect(() => {
         
-        if (!refGlobal.current && !refCategory.current) {
+        if (!globalFilter && !categoryValue ) {
             dispatch(startPrudctLoading(customRows1, customFirst1))
             console.log('cargar producto');
         }
-        if (refGlobal.current) {
-            dispatch(startSearchPrudctLoading(refGlobal.current, customRows1, customFirst1))
+        if (globalFilter) {
+            dispatch(startSearchPrudctLoading(globalFilter, customRows1, customFirst1))
             console.log('buscar producto')
         }
-        if (refCategory.current) {
-            dispatch(startSearchProductByCategoryLoading(refCategory.current, customRows1, customFirst1))
+        if (categoryValue) {
+            dispatch(startSearchProductByCategoryLoading(categoryValue, customRows1, customFirst1))
             console.log('buscar producto por categoria')
         }
       
