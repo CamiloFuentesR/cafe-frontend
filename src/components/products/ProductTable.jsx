@@ -15,6 +15,7 @@ import useValidation from '../../hooks/useValidation';
 import { startPrudctLoading, startSearchProductByCategoryLoading, startSearchPrudctLoading } from '../../actions/product.action';
 import { ProductModalSave } from './ProductModalSave';
 import { startCategoryLoad } from '../../actions/category.action';
+import { useSelector } from 'react-redux';
 
 const initialForm = {
     name: '',
@@ -24,8 +25,11 @@ const initialForm = {
     user: {},
 }
 
-export const ProductTable = ({ totalProducts, products }) => {
+export const ProductTable = () => {
 
+    const { products, totalProducts } = useSelector(state => state.product)
+    const refGlobal = useRef()
+    const refCategory = useRef()
     const [selectedProducts, setSelectedProducts] = useState(null);
     const [productDialog, setProductDialog] = useState(false);
     const [globalFilter, setGlobalFilter] = useState(null);
@@ -42,18 +46,25 @@ export const ProductTable = ({ totalProducts, products }) => {
         e.preventDEfault()
         console.log(e);
     }
+    refGlobal.current = globalFilter;
+    refCategory.current = categoryValue
     useEffect(() => {
-        if (!globalFilter) {
+        
+        if (!refGlobal.current && !refCategory.current) {
             dispatch(startPrudctLoading(customRows1, customFirst1))
+            console.log('cargar producto');
         }
-        if (globalFilter) {
-            dispatch(startSearchPrudctLoading(globalFilter, customRows1, customFirst1))
+        if (refGlobal.current) {
+            dispatch(startSearchPrudctLoading(refGlobal.current, customRows1, customFirst1))
+            console.log('buscar producto')
         }
-        if(categoryValue) {
-            dispatch(startSearchProductByCategoryLoading(categoryValue, customRows1, customFirst1))
+        if (refCategory.current) {
+            dispatch(startSearchProductByCategoryLoading(refCategory.current, customRows1, customFirst1))
+            console.log('buscar producto por categoria')
         }
-    }, [dispatch, customFirst1, customRows1, globalFilter, categoryValue]);
-
+      
+        
+    }, [dispatch, customFirst1, customRows1, globalFilter, categoryValue,totalProducts]);
 
     const onPageInputChange = (event) => {
         setCurrentPage(event.target.value);
@@ -89,7 +100,7 @@ export const ProductTable = ({ totalProducts, products }) => {
                     <i className="pi pi-search" />
                     <InputText /* value={} */
                         type="search"
-                        onChange={(e) => setcategoryaValue(e.target.value)} 
+                        onChange={(e) => setcategoryaValue(e.target.value)}
                         placeholder="Buscar..." />
                 </span>
 

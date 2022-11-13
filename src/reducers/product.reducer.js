@@ -11,12 +11,13 @@ export const productReducer = (state = initialState, action) => {
         case types.startPrudctLoading:
             return {
                 ...state,
-                products: [...action.payload]
+                products: [...action.payload],
+                totalProducts: state.totalProducts
             }
-        case types.startTotalProducts:
+            case types.startTotalProducts:
             return {
                 ...state,
-                totalProducts: action.payload
+                totalProducts: action.payload,
             }
         case types.startUpdateProduct:
             return {

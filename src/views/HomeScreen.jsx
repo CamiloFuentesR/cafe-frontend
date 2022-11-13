@@ -16,14 +16,18 @@ export const Home = () => {
         <div className='__home_screen'>
             <header className="__home_header">
             </header>
-            <section className="__home_section1">
+            <section className="d-flex flex-column __home_section1  align-items-center  ">
                 <div className="_home_section1_sub">
-                    <img src={heartcoffe} alt="" />
-                    <h2>Disfruta del mejor Café</h2>
+                    <img src={heartcoffe} alt="imagen de taza de café" className='opacity-img-cafe' />
+                    <h2 className='title-size'>Disfruta del mejor Café</h2>
+                </div>
+                <div className='p-5 mt-5 text-center'>
+                    <p className='mt-5'>Tenemos el una gran variedad al servicio de nuestros clientes</p>
+                    <p>Ven y no te pierdas de estos deliciosos sabores</p>
                 </div>
             </section>
-            <section className="__home_menu">
-                <div className="__home_menu_contenido">
+            <section className="container-fluid">
+                <div className="container d-flex bg-warning opacity-25">
                     <div className="__home_liquidos">
                         <div className="__home_refrescos">
                             <header>

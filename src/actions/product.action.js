@@ -23,7 +23,7 @@ export const startSearchPrudctLoading = (value, total, from) => {
 }
 export const startSearchProductByCategoryLoading = (value, total, from) => {
     return async (dispatch) => {
-        await clienteAxios.get(`https://rest-service-node-cafe.herokuapp.com/api/search/productsByCategory/${value}?limit=${total}&from=${from}`)
+        await clienteAxios.get(`/search/productsByCategory/${value}?limit=${total}&from=${from}`)
             .then(({ data }) => {
                 dispatch(productLoad(data.results.products))
                 dispatch(totalProducts(data.results.total))
